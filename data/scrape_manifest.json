@@ -1,0 +1,2195 @@
+{
+  "generatedAt": "2026-03-06T07:50:10Z",
+  "baseUrl": "https://ssodb.bplaced.net/db/index.html",
+  "pageCount": 70,
+  "pages": [
+    {
+      "url": "https://ssodb.bplaced.net/db/accessoires.html",
+      "status": 200,
+      "title": "Accessoires [Starstable-Datenbank]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/db.accessories.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-85TZCEKW2S"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/accessories.html",
+        "https://ssodb.bplaced.net/db/faq.html",
+        "https://ssodb.bplaced.net/db/fr/accessories.html",
+        "https://ssodb.bplaced.net/db/pl/accessories.html",
+        "https://ssodb.bplaced.net/db/se/accessories.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/ausruestung-combos.html",
+      "status": 404,
+      "title": "Starstable Database",
+      "scriptCount": 0,
+      "linkCount": 0,
+      "scripts": [],
+      "links": []
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/ausruestung.html",
+      "status": 200,
+      "title": "AusrÃ¼stung [Starstable-Datenbank]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/db.equipment.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-85TZCEKW2S"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/equipment.html",
+        "https://ssodb.bplaced.net/db/faq.html",
+        "https://ssodb.bplaced.net/db/fr/equipment.html",
+        "https://ssodb.bplaced.net/db/pl/equipment.html",
+        "https://ssodb.bplaced.net/db/se/equipment.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/dekoration.html",
+      "status": 200,
+      "title": "Dekoration [Starstable-Datenbank]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/db.decorations.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-85TZCEKW2S"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/decorations.html",
+        "https://ssodb.bplaced.net/db/faq.html",
+        "https://ssodb.bplaced.net/db/fr/decorations.html",
+        "https://ssodb.bplaced.net/db/pl/decorations.html",
+        "https://ssodb.bplaced.net/db/se/decorations.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/accessories.html",
+      "status": 200,
+      "title": "Accessories [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/en/media/js/db-en.accessories.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-BT6NN98CJX"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/accessoires.html",
+        "https://ssodb.bplaced.net/db/en/faq.html",
+        "https://ssodb.bplaced.net/db/fr/accessories.html",
+        "https://ssodb.bplaced.net/db/pl/accessories.html",
+        "https://ssodb.bplaced.net/db/se/accessories.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/bags.html",
+      "status": 200,
+      "title": "Saddle Bags [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/en/media/js/db-en.bags.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-BT6NN98CJX"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/faq.html",
+        "https://ssodb.bplaced.net/db/fr/bags.html",
+        "https://ssodb.bplaced.net/db/pl/bags.html",
+        "https://ssodb.bplaced.net/db/se/bags.html",
+        "https://ssodb.bplaced.net/db/taschen.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/clothes-combos.html",
+      "status": 404,
+      "title": "Starstable Database",
+      "scriptCount": 0,
+      "linkCount": 0,
+      "scripts": [],
+      "links": []
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/clothes.html",
+      "status": 200,
+      "title": "Clothes [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/en/media/js/db-en.clothes.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-BT6NN98CJX"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/faq.html",
+        "https://ssodb.bplaced.net/db/fr/clothes.html",
+        "https://ssodb.bplaced.net/db/kleidung.html",
+        "https://ssodb.bplaced.net/db/pl/clothes.html",
+        "https://ssodb.bplaced.net/db/se/clothes.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/decorations.html",
+      "status": 200,
+      "title": "Decoration [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/en/media/js/db-en.decorations.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-BT6NN98CJX"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/dekoration.html",
+        "https://ssodb.bplaced.net/db/en/faq.html",
+        "https://ssodb.bplaced.net/db/fr/decorations.html",
+        "https://ssodb.bplaced.net/db/pl/decorations.html",
+        "https://ssodb.bplaced.net/db/se/decorations.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/equipment-combos.html",
+      "status": 404,
+      "title": "Starstable Database",
+      "scriptCount": 0,
+      "linkCount": 0,
+      "scripts": [],
+      "links": []
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/equipment.html",
+      "status": 200,
+      "title": "Equipment [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/en/media/js/db-en.equipment.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-BT6NN98CJX"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/ausruestung.html",
+        "https://ssodb.bplaced.net/db/en/faq.html",
+        "https://ssodb.bplaced.net/db/fr/equipment.html",
+        "https://ssodb.bplaced.net/db/pl/equipment.html",
+        "https://ssodb.bplaced.net/db/se/equipment.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/faq.html",
+      "status": 200,
+      "title": "FAQ [Starstable Database]",
+      "scriptCount": 5,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/db.index.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.simpleFAQ.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-BT6NN98CJX"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/faq.html",
+        "https://ssodb.bplaced.net/db/faq.html",
+        "https://ssodb.bplaced.net/db/fr/faq.html",
+        "https://ssodb.bplaced.net/db/pl/faq.html",
+        "https://ssodb.bplaced.net/db/se/faq.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/hairstyles.html",
+      "status": 200,
+      "title": "Hairstyles [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/en/media/js/db-en.hairstyles.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-BT6NN98CJX"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/faq.html",
+        "https://ssodb.bplaced.net/db/fr/hairstyles.html",
+        "https://ssodb.bplaced.net/db/frisuren.html",
+        "https://ssodb.bplaced.net/db/pl/hairstyles.html",
+        "https://ssodb.bplaced.net/db/se/hairstyles.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/horses-start.html",
+      "status": 200,
+      "title": "Starter Horses [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/en/media/js/db-en.horses-start.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-BT6NN98CJX"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/faq.html",
+        "https://ssodb.bplaced.net/db/en/horses.html",
+        "https://ssodb.bplaced.net/db/fr/horses-start.html",
+        "https://ssodb.bplaced.net/db/pferde-start.html",
+        "https://ssodb.bplaced.net/db/pl/horses-start.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/horses.html",
+      "status": 200,
+      "title": "Horses [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 6,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/en/media/js/db-en.horses.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-BT6NN98CJX"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/faq.html",
+        "https://ssodb.bplaced.net/db/en/horses-start.html",
+        "https://ssodb.bplaced.net/db/fr/horses.html",
+        "https://ssodb.bplaced.net/db/pferde.html",
+        "https://ssodb.bplaced.net/db/pl/horses.html",
+        "https://ssodb.bplaced.net/db/se/horses.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/index.html",
+      "status": 200,
+      "title": "Starstable Database",
+      "scriptCount": 4,
+      "linkCount": 15,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/db.index.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-BT6NN98CJX"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/accessories.html",
+        "https://ssodb.bplaced.net/db/en/bags.html",
+        "https://ssodb.bplaced.net/db/en/clothes-combos.html",
+        "https://ssodb.bplaced.net/db/en/clothes.html",
+        "https://ssodb.bplaced.net/db/en/decorations.html",
+        "https://ssodb.bplaced.net/db/en/equipment.html",
+        "https://ssodb.bplaced.net/db/en/faq.html",
+        "https://ssodb.bplaced.net/db/en/hairstyles.html",
+        "https://ssodb.bplaced.net/db/en/horses.html",
+        "https://ssodb.bplaced.net/db/en/makeup.html",
+        "https://ssodb.bplaced.net/db/en/pets.html",
+        "https://ssodb.bplaced.net/db/fr/index.html",
+        "https://ssodb.bplaced.net/db/index.html",
+        "https://ssodb.bplaced.net/db/pl/index.html",
+        "https://ssodb.bplaced.net/db/se/index.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/makeup.html",
+      "status": 200,
+      "title": "Make-Ups [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/en/media/js/db-en.makeup.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-BT6NN98CJX"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/faq.html",
+        "https://ssodb.bplaced.net/db/fr/makeup.html",
+        "https://ssodb.bplaced.net/db/makeup.html",
+        "https://ssodb.bplaced.net/db/pl/makeup.html",
+        "https://ssodb.bplaced.net/db/se/makeup.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/pets.html",
+      "status": 200,
+      "title": "Pets [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/en/media/js/db-en.pets.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-BT6NN98CJX"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/faq.html",
+        "https://ssodb.bplaced.net/db/fr/pets.html",
+        "https://ssodb.bplaced.net/db/haustiere.html",
+        "https://ssodb.bplaced.net/db/pl/pets.html",
+        "https://ssodb.bplaced.net/db/se/pets.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/faq.html",
+      "status": 200,
+      "title": "FAQ [Starstable-Datenbank]",
+      "scriptCount": 5,
+      "linkCount": 7,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/db.index.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.simpleFAQ.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-85TZCEKW2S"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/faq.html",
+        "https://ssodb.bplaced.net/db/faq.html",
+        "https://ssodb.bplaced.net/db/fr/faq.html",
+        "https://ssodb.bplaced.net/db/index.html",
+        "https://ssodb.bplaced.net/db/kleidung-combos.html",
+        "https://ssodb.bplaced.net/db/pl/faq.html",
+        "https://ssodb.bplaced.net/db/se/faq.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/accessories.html",
+      "status": 200,
+      "title": "Accessoires [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/fr/media/js/db-fr.accessories.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-Z6EKE0XP6P"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/accessoires.html",
+        "https://ssodb.bplaced.net/db/en/accessories.html",
+        "https://ssodb.bplaced.net/db/fr/faq.html",
+        "https://ssodb.bplaced.net/db/pl/accessories.html",
+        "https://ssodb.bplaced.net/db/se/accessories.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/bags.html",
+      "status": 200,
+      "title": "Sacoches [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/fr/media/js/db-fr.bags.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-Z6EKE0XP6P"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/bags.html",
+        "https://ssodb.bplaced.net/db/fr/faq.html",
+        "https://ssodb.bplaced.net/db/pl/bags.html",
+        "https://ssodb.bplaced.net/db/se/bags.html",
+        "https://ssodb.bplaced.net/db/taschen.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/clothes-combos.html",
+      "status": 200,
+      "title": "Optimiser VÃªtements [Starstable Database]",
+      "scriptCount": 6,
+      "linkCount": 6,
+      "scripts": [
+        "http://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/fr/media/js/db-fr.clothes-combos.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/clothes-combos.html",
+        "https://ssodb.bplaced.net/db/fr/equipment-combos.html",
+        "https://ssodb.bplaced.net/db/fr/faq.html",
+        "https://ssodb.bplaced.net/db/kleidung-combos.html",
+        "https://ssodb.bplaced.net/db/pl/clothes-combos.html",
+        "https://ssodb.bplaced.net/db/se/clothes-combos.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/clothes.html",
+      "status": 200,
+      "title": "VÃªtements [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/fr/media/js/db-fr.clothes.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-Z6EKE0XP6P"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/clothes.html",
+        "https://ssodb.bplaced.net/db/fr/faq.html",
+        "https://ssodb.bplaced.net/db/kleidung.html",
+        "https://ssodb.bplaced.net/db/pl/clothes.html",
+        "https://ssodb.bplaced.net/db/se/clothes.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/decorations.html",
+      "status": 200,
+      "title": "DÃ©coration [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/fr/media/js/db-fr.decorations.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-Z6EKE0XP6P"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/dekoration.html",
+        "https://ssodb.bplaced.net/db/en/decorations.html",
+        "https://ssodb.bplaced.net/db/fr/faq.html",
+        "https://ssodb.bplaced.net/db/pl/decorations.html",
+        "https://ssodb.bplaced.net/db/se/decorations.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/equipment-combos.html",
+      "status": 200,
+      "title": "Optimiser l'Ãquipement [Starstable Database]",
+      "scriptCount": 6,
+      "linkCount": 6,
+      "scripts": [
+        "http://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/fr/media/js/db-fr.equipment-combos.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/ausruestung-combos.html",
+        "https://ssodb.bplaced.net/db/en/equipment-combos.html",
+        "https://ssodb.bplaced.net/db/fr/clothes-combos.html",
+        "https://ssodb.bplaced.net/db/fr/faq.html",
+        "https://ssodb.bplaced.net/db/pl/equipment-combos.html",
+        "https://ssodb.bplaced.net/db/se/equipment-combos.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/equipment.html",
+      "status": 200,
+      "title": "Ãquipement [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/fr/media/js/db-fr.equipment.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-Z6EKE0XP6P"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/ausruestung.html",
+        "https://ssodb.bplaced.net/db/en/equipment.html",
+        "https://ssodb.bplaced.net/db/fr/faq.html",
+        "https://ssodb.bplaced.net/db/pl/equipment.html",
+        "https://ssodb.bplaced.net/db/se/equipment.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/faq.html",
+      "status": 200,
+      "title": "FAQ [Starstable Database]",
+      "scriptCount": 5,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/db.index.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.simpleFAQ.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-Z6EKE0XP6P"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/faq.html",
+        "https://ssodb.bplaced.net/db/faq.html",
+        "https://ssodb.bplaced.net/db/fr/faq.html",
+        "https://ssodb.bplaced.net/db/pl/faq.html",
+        "https://ssodb.bplaced.net/db/se/faq.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/hairstyles.html",
+      "status": 200,
+      "title": "Coiffures [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/fr/media/js/db-fr.hairstyles.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-Z6EKE0XP6P"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/hairstyles.html",
+        "https://ssodb.bplaced.net/db/fr/faq.html",
+        "https://ssodb.bplaced.net/db/frisuren.html",
+        "https://ssodb.bplaced.net/db/pl/hairstyles.html",
+        "https://ssodb.bplaced.net/db/se/hairstyles.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/horses-start.html",
+      "status": 200,
+      "title": "Chevaux de dÃ©part [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/fr/media/js/db-fr.horses-start.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-Z6EKE0XP6P"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/horses-start.html",
+        "https://ssodb.bplaced.net/db/fr/faq.html",
+        "https://ssodb.bplaced.net/db/fr/horses.html",
+        "https://ssodb.bplaced.net/db/pferde-start.html",
+        "https://ssodb.bplaced.net/db/pl/horses-start.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/horses.html",
+      "status": 200,
+      "title": "Chevaux [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 6,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/fr/media/js/db-fr.horses.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-Z6EKE0XP6P"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/horses.html",
+        "https://ssodb.bplaced.net/db/fr/faq.html",
+        "https://ssodb.bplaced.net/db/fr/horses-start.html",
+        "https://ssodb.bplaced.net/db/pferde.html",
+        "https://ssodb.bplaced.net/db/pl/horses.html",
+        "https://ssodb.bplaced.net/db/se/horses.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/index.html",
+      "status": 200,
+      "title": "Starstable Database",
+      "scriptCount": 4,
+      "linkCount": 12,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/db.index.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-Z6EKE0XP6P"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/index.html",
+        "https://ssodb.bplaced.net/db/fr/accessories.html",
+        "https://ssodb.bplaced.net/db/fr/clothes-combos.html",
+        "https://ssodb.bplaced.net/db/fr/clothes.html",
+        "https://ssodb.bplaced.net/db/fr/decorations.html",
+        "https://ssodb.bplaced.net/db/fr/equipment.html",
+        "https://ssodb.bplaced.net/db/fr/faq.html",
+        "https://ssodb.bplaced.net/db/fr/hairstyles.html",
+        "https://ssodb.bplaced.net/db/fr/horses.html",
+        "https://ssodb.bplaced.net/db/index.html",
+        "https://ssodb.bplaced.net/db/pl/index.html",
+        "https://ssodb.bplaced.net/db/se/index.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/makeup.html",
+      "status": 200,
+      "title": "Maquillages [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/fr/media/js/db-fr.makeup.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-Z6EKE0XP6P"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/makeup.html",
+        "https://ssodb.bplaced.net/db/fr/faq.html",
+        "https://ssodb.bplaced.net/db/makeup.html",
+        "https://ssodb.bplaced.net/db/pl/makeup.html",
+        "https://ssodb.bplaced.net/db/se/makeup.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/pets.html",
+      "status": 200,
+      "title": "Animaux de compagnie [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/fr/media/js/db-fr.pets.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-Z6EKE0XP6P"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/pets.html",
+        "https://ssodb.bplaced.net/db/fr/faq.html",
+        "https://ssodb.bplaced.net/db/haustiere.html",
+        "https://ssodb.bplaced.net/db/pl/pets.html",
+        "https://ssodb.bplaced.net/db/se/pets.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/frisuren.html",
+      "status": 200,
+      "title": "Frisuren [Starstable-Datenbank]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/db.hairstyles.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-85TZCEKW2S"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/hairstyles.html",
+        "https://ssodb.bplaced.net/db/faq.html",
+        "https://ssodb.bplaced.net/db/fr/hairstyles.html",
+        "https://ssodb.bplaced.net/db/pl/hairstyles.html",
+        "https://ssodb.bplaced.net/db/se/hairstyles.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/haustiere.html",
+      "status": 200,
+      "title": "Haustiere [Starstable-Datenbank]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/db.pets.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-85TZCEKW2S"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/pets.html",
+        "https://ssodb.bplaced.net/db/faq.html",
+        "https://ssodb.bplaced.net/db/fr/pets.html",
+        "https://ssodb.bplaced.net/db/pl/pets.html",
+        "https://ssodb.bplaced.net/db/se/pets.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/index.html",
+      "status": 200,
+      "title": "Starstable-Datenbank",
+      "scriptCount": 4,
+      "linkCount": 15,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/db.index.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-85TZCEKW2S"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/accessoires.html",
+        "https://ssodb.bplaced.net/db/ausruestung.html",
+        "https://ssodb.bplaced.net/db/dekoration.html",
+        "https://ssodb.bplaced.net/db/en/index.html",
+        "https://ssodb.bplaced.net/db/faq.html",
+        "https://ssodb.bplaced.net/db/fr/index.html",
+        "https://ssodb.bplaced.net/db/frisuren.html",
+        "https://ssodb.bplaced.net/db/haustiere.html",
+        "https://ssodb.bplaced.net/db/kleidung-combos.html",
+        "https://ssodb.bplaced.net/db/kleidung.html",
+        "https://ssodb.bplaced.net/db/makeup.html",
+        "https://ssodb.bplaced.net/db/pferde.html",
+        "https://ssodb.bplaced.net/db/pl/index.html",
+        "https://ssodb.bplaced.net/db/se/index.html",
+        "https://ssodb.bplaced.net/db/taschen.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/kleidung-combos.html",
+      "status": 404,
+      "title": "Starstable Database",
+      "scriptCount": 0,
+      "linkCount": 0,
+      "scripts": [],
+      "links": []
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/kleidung.html",
+      "status": 200,
+      "title": "Kleidung [Starstable-Datenbank]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/db.clothes.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-85TZCEKW2S"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/clothes.html",
+        "https://ssodb.bplaced.net/db/faq.html",
+        "https://ssodb.bplaced.net/db/fr/clothes.html",
+        "https://ssodb.bplaced.net/db/pl/clothes.html",
+        "https://ssodb.bplaced.net/db/se/clothes.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/makeup.html",
+      "status": 200,
+      "title": "MakeUps [Starstable-Datenbank]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/db.makeup.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-85TZCEKW2S"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/makeup.html",
+        "https://ssodb.bplaced.net/db/faq.html",
+        "https://ssodb.bplaced.net/db/fr/makeup.html",
+        "https://ssodb.bplaced.net/db/pl/makeup.html",
+        "https://ssodb.bplaced.net/db/se/makeup.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pferde-start.html",
+      "status": 200,
+      "title": "Start-Pferde [Starstable-Datenbank]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/db.horses-start.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-85TZCEKW2S"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/horses-start.html",
+        "https://ssodb.bplaced.net/db/faq.html",
+        "https://ssodb.bplaced.net/db/fr/horses-start.html",
+        "https://ssodb.bplaced.net/db/pferde.html",
+        "https://ssodb.bplaced.net/db/pl/horses-start.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pferde.html",
+      "status": 200,
+      "title": "Pferde [Starstable-Datenbank]",
+      "scriptCount": 7,
+      "linkCount": 6,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/db.horses.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-85TZCEKW2S"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/horses.html",
+        "https://ssodb.bplaced.net/db/faq.html",
+        "https://ssodb.bplaced.net/db/fr/horses.html",
+        "https://ssodb.bplaced.net/db/pferde-start.html",
+        "https://ssodb.bplaced.net/db/pl/horses.html",
+        "https://ssodb.bplaced.net/db/se/horses.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/accessories.html",
+      "status": 200,
+      "title": "Akcesoria [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://ssodb.bplaced.net/db/pl/media/js/db-pl.accessories.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-YX3G37YP7K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/accessoires.html",
+        "https://ssodb.bplaced.net/db/en/accessories.html",
+        "https://ssodb.bplaced.net/db/fr/accessories.html",
+        "https://ssodb.bplaced.net/db/pl/faq.html",
+        "https://ssodb.bplaced.net/db/se/accessories.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/bags.html",
+      "status": 200,
+      "title": "Torby [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://ssodb.bplaced.net/db/pl/media/js/db-pl.bags.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-YX3G37YP7K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/bags.html",
+        "https://ssodb.bplaced.net/db/fr/bags.html",
+        "https://ssodb.bplaced.net/db/pl/faq.html",
+        "https://ssodb.bplaced.net/db/se/bags.html",
+        "https://ssodb.bplaced.net/db/taschen.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/clothes-combos.html",
+      "status": 404,
+      "title": "Starstable Database",
+      "scriptCount": 0,
+      "linkCount": 0,
+      "scripts": [],
+      "links": []
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/clothes.html",
+      "status": 200,
+      "title": "UbraÅ [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://ssodb.bplaced.net/db/pl/media/js/db-pl.clothes.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-YX3G37YP7K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/clothes.html",
+        "https://ssodb.bplaced.net/db/fr/clothes.html",
+        "https://ssodb.bplaced.net/db/kleidung.html",
+        "https://ssodb.bplaced.net/db/pl/faq.html",
+        "https://ssodb.bplaced.net/db/se/clothes.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/decorations.html",
+      "status": 200,
+      "title": "Dekoracje [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://ssodb.bplaced.net/db/pl/media/js/db-pl.decorations.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-YX3G37YP7K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/dekoration.html",
+        "https://ssodb.bplaced.net/db/en/decorations.html",
+        "https://ssodb.bplaced.net/db/fr/decorations.html",
+        "https://ssodb.bplaced.net/db/pl/faq.html",
+        "https://ssodb.bplaced.net/db/se/decorations.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/equipment-combos.html",
+      "status": 404,
+      "title": "Starstable Database",
+      "scriptCount": 0,
+      "linkCount": 0,
+      "scripts": [],
+      "links": []
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/equipment.html",
+      "status": 200,
+      "title": "SprzÄtu [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://ssodb.bplaced.net/db/pl/media/js/db-pl.equipment.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-YX3G37YP7K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/ausruestung.html",
+        "https://ssodb.bplaced.net/db/en/equipment.html",
+        "https://ssodb.bplaced.net/db/fr/equipment.html",
+        "https://ssodb.bplaced.net/db/pl/faq.html",
+        "https://ssodb.bplaced.net/db/se/equipment.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/faq.html",
+      "status": 200,
+      "title": "FAQ [Starstable Database]",
+      "scriptCount": 5,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/db.index.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.simpleFAQ.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-YX3G37YP7K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/faq.html",
+        "https://ssodb.bplaced.net/db/faq.html",
+        "https://ssodb.bplaced.net/db/fr/faq.html",
+        "https://ssodb.bplaced.net/db/pl/faq.html",
+        "https://ssodb.bplaced.net/db/se/faq.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/hairstyles.html",
+      "status": 200,
+      "title": "Fryzury [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://ssodb.bplaced.net/db/pl/media/js/db-pl.hairstyles.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-YX3G37YP7K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/hairstyles.html",
+        "https://ssodb.bplaced.net/db/fr/hairstyles.html",
+        "https://ssodb.bplaced.net/db/frisuren.html",
+        "https://ssodb.bplaced.net/db/pl/faq.html",
+        "https://ssodb.bplaced.net/db/se/hairstyles.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/horses-start.html",
+      "status": 200,
+      "title": "Starter Horses [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://ssodb.bplaced.net/db/pl/media/js/db-pl.horses-start.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-YX3G37YP7K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/fr/horses-start.html",
+        "https://ssodb.bplaced.net/db/pferde-start.html",
+        "https://ssodb.bplaced.net/db/pl/faq.html",
+        "https://ssodb.bplaced.net/db/pl/horses-start.html",
+        "https://ssodb.bplaced.net/db/pl/horses.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/horses.html",
+      "status": 200,
+      "title": "Konie [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 6,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://ssodb.bplaced.net/db/pl/media/js/db-pl.horses.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-YX3G37YP7K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/horses.html",
+        "https://ssodb.bplaced.net/db/fr/horses.html",
+        "https://ssodb.bplaced.net/db/pferde.html",
+        "https://ssodb.bplaced.net/db/pl/faq.html",
+        "https://ssodb.bplaced.net/db/pl/horses-start.html",
+        "https://ssodb.bplaced.net/db/se/horses.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/index.html",
+      "status": 200,
+      "title": "Starstable Database",
+      "scriptCount": 4,
+      "linkCount": 15,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/db.index.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-YX3G37YP7K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/index.html",
+        "https://ssodb.bplaced.net/db/fr/index.html",
+        "https://ssodb.bplaced.net/db/index.html",
+        "https://ssodb.bplaced.net/db/pl/accessories.html",
+        "https://ssodb.bplaced.net/db/pl/bags.html",
+        "https://ssodb.bplaced.net/db/pl/clothes-combos.html",
+        "https://ssodb.bplaced.net/db/pl/clothes.html",
+        "https://ssodb.bplaced.net/db/pl/decorations.html",
+        "https://ssodb.bplaced.net/db/pl/equipment.html",
+        "https://ssodb.bplaced.net/db/pl/faq.html",
+        "https://ssodb.bplaced.net/db/pl/hairstyles.html",
+        "https://ssodb.bplaced.net/db/pl/horses.html",
+        "https://ssodb.bplaced.net/db/pl/makeup.html",
+        "https://ssodb.bplaced.net/db/pl/pets.html",
+        "https://ssodb.bplaced.net/db/se/index.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/makeup.html",
+      "status": 200,
+      "title": "Spis makijaÅ¼u [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://ssodb.bplaced.net/db/pl/media/js/db-pl.makeup.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-YX3G37YP7K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/makeup.html",
+        "https://ssodb.bplaced.net/db/fr/makeup.html",
+        "https://ssodb.bplaced.net/db/makeup.html",
+        "https://ssodb.bplaced.net/db/pl/faq.html",
+        "https://ssodb.bplaced.net/db/se/makeup.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/pets.html",
+      "status": 200,
+      "title": "ZwierzÄta [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://ssodb.bplaced.net/db/pl/media/js/db-pl.pets.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-YX3G37YP7K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/pets.html",
+        "https://ssodb.bplaced.net/db/fr/pets.html",
+        "https://ssodb.bplaced.net/db/haustiere.html",
+        "https://ssodb.bplaced.net/db/pl/faq.html",
+        "https://ssodb.bplaced.net/db/se/pets.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/accessories.html",
+      "status": 200,
+      "title": "Accessoarer [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://ssodb.bplaced.net/db/se/media/js/db-se.accessories.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-N17GVXXW4K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/accessoires.html",
+        "https://ssodb.bplaced.net/db/en/accessories.html",
+        "https://ssodb.bplaced.net/db/fr/accessories.html",
+        "https://ssodb.bplaced.net/db/pl/accessories.html",
+        "https://ssodb.bplaced.net/db/se/faq.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/bags.html",
+      "status": 200,
+      "title": "SadelvÃ¤skor [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://ssodb.bplaced.net/db/se/media/js/db-se.bags.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-N17GVXXW4K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/bags.html",
+        "https://ssodb.bplaced.net/db/fr/bags.html",
+        "https://ssodb.bplaced.net/db/pl/bags.html",
+        "https://ssodb.bplaced.net/db/se/faq.html",
+        "https://ssodb.bplaced.net/db/taschen.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/clothes-combos.html",
+      "status": 404,
+      "title": "Starstable Database",
+      "scriptCount": 0,
+      "linkCount": 0,
+      "scripts": [],
+      "links": []
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/clothes.html",
+      "status": 200,
+      "title": "KlÃ¤der [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://ssodb.bplaced.net/db/se/media/js/db-se.clothes.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-N17GVXXW4K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/clothes.html",
+        "https://ssodb.bplaced.net/db/fr/clothes.html",
+        "https://ssodb.bplaced.net/db/kleidung.html",
+        "https://ssodb.bplaced.net/db/pl/clothes.html",
+        "https://ssodb.bplaced.net/db/se/faq.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/decorations.html",
+      "status": 200,
+      "title": "Dekoration [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://ssodb.bplaced.net/db/se/media/js/db-se.decorations.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-N17GVXXW4K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/dekoration.html",
+        "https://ssodb.bplaced.net/db/en/decorations.html",
+        "https://ssodb.bplaced.net/db/fr/decorations.html",
+        "https://ssodb.bplaced.net/db/pl/decorations.html",
+        "https://ssodb.bplaced.net/db/se/faq.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/equipment-combos.html",
+      "status": 404,
+      "title": "Starstable Database",
+      "scriptCount": 0,
+      "linkCount": 0,
+      "scripts": [],
+      "links": []
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/equipment.html",
+      "status": 200,
+      "title": "Utrustning [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://ssodb.bplaced.net/db/se/media/js/db-se.equipment.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-N17GVXXW4K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/ausruestung.html",
+        "https://ssodb.bplaced.net/db/en/equipment.html",
+        "https://ssodb.bplaced.net/db/fr/equipment.html",
+        "https://ssodb.bplaced.net/db/pl/equipment.html",
+        "https://ssodb.bplaced.net/db/se/faq.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/faq.html",
+      "status": 200,
+      "title": "FAQ [Starstable Database]",
+      "scriptCount": 5,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/db.index.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.simpleFAQ.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-N17GVXXW4K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/faq.html",
+        "https://ssodb.bplaced.net/db/faq.html",
+        "https://ssodb.bplaced.net/db/fr/faq.html",
+        "https://ssodb.bplaced.net/db/pl/faq.html",
+        "https://ssodb.bplaced.net/db/se/faq.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/hairstyles.html",
+      "status": 200,
+      "title": "Frisyrer [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://ssodb.bplaced.net/db/se/media/js/db-se.hairstyles.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-N17GVXXW4K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/hairstyles.html",
+        "https://ssodb.bplaced.net/db/fr/hairstyles.html",
+        "https://ssodb.bplaced.net/db/frisuren.html",
+        "https://ssodb.bplaced.net/db/pl/hairstyles.html",
+        "https://ssodb.bplaced.net/db/se/faq.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/horses-start.html",
+      "status": 200,
+      "title": "Starter HÃ¤star [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 6,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://ssodb.bplaced.net/db/se/media/js/db-se.horses-start.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-N17GVXXW4K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/horses-start.html",
+        "https://ssodb.bplaced.net/db/fr/horses-start.html",
+        "https://ssodb.bplaced.net/db/pferde-start.html",
+        "https://ssodb.bplaced.net/db/pl/horses-start.html",
+        "https://ssodb.bplaced.net/db/se/faq.html",
+        "https://ssodb.bplaced.net/db/se/horses.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/horses.html",
+      "status": 200,
+      "title": "HÃ¤star [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 6,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://ssodb.bplaced.net/db/se/media/js/db-se.horses.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-N17GVXXW4K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/horses.html",
+        "https://ssodb.bplaced.net/db/fr/horses.html",
+        "https://ssodb.bplaced.net/db/pferde.html",
+        "https://ssodb.bplaced.net/db/pl/horses.html",
+        "https://ssodb.bplaced.net/db/se/faq.html",
+        "https://ssodb.bplaced.net/db/se/horses-start.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/index.html",
+      "status": 200,
+      "title": "Starstable Database",
+      "scriptCount": 4,
+      "linkCount": 12,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/db.index.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-N17GVXXW4K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/index.html",
+        "https://ssodb.bplaced.net/db/fr/index.html",
+        "https://ssodb.bplaced.net/db/index.html",
+        "https://ssodb.bplaced.net/db/pl/index.html",
+        "https://ssodb.bplaced.net/db/se/accessories.html",
+        "https://ssodb.bplaced.net/db/se/clothes-combos.html",
+        "https://ssodb.bplaced.net/db/se/clothes.html",
+        "https://ssodb.bplaced.net/db/se/decorations.html",
+        "https://ssodb.bplaced.net/db/se/equipment.html",
+        "https://ssodb.bplaced.net/db/se/faq.html",
+        "https://ssodb.bplaced.net/db/se/hairstyles.html",
+        "https://ssodb.bplaced.net/db/se/horses.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/makeup.html",
+      "status": 200,
+      "title": "Smink [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://ssodb.bplaced.net/db/se/media/js/db-se.makeup.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-N17GVXXW4K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/makeup.html",
+        "https://ssodb.bplaced.net/db/fr/makeup.html",
+        "https://ssodb.bplaced.net/db/makeup.html",
+        "https://ssodb.bplaced.net/db/pl/makeup.html",
+        "https://ssodb.bplaced.net/db/se/faq.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/pets.html",
+      "status": 200,
+      "title": "Husdjur [Starstable Database]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://ssodb.bplaced.net/db/se/media/js/db-se.pets.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-N17GVXXW4K"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/pets.html",
+        "https://ssodb.bplaced.net/db/fr/pets.html",
+        "https://ssodb.bplaced.net/db/haustiere.html",
+        "https://ssodb.bplaced.net/db/pl/pets.html",
+        "https://ssodb.bplaced.net/db/se/faq.html"
+      ]
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/taschen.html",
+      "status": 200,
+      "title": "Satteltaschen [Starstable-Datenbank]",
+      "scriptCount": 7,
+      "linkCount": 5,
+      "scripts": [
+        "https://code.jquery.com/jquery-3.3.1.min.js",
+        "https://ssodb.bplaced.net/db/media/js/db.bags.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.fixedHeader.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.dataTables.min.js",
+        "https://ssodb.bplaced.net/db/media/js/jquery.nanoscroller.min.js",
+        "https://ssodb.bplaced.net/db/media/js/zebra_dialog.min.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-85TZCEKW2S"
+      ],
+      "links": [
+        "https://ssodb.bplaced.net/db/en/bags.html",
+        "https://ssodb.bplaced.net/db/faq.html",
+        "https://ssodb.bplaced.net/db/fr/bags.html",
+        "https://ssodb.bplaced.net/db/pl/bags.html",
+        "https://ssodb.bplaced.net/db/se/bags.html"
+      ]
+    }
+  ],
+  "dataEndpointCount": 47,
+  "dataEndpoints": [
+    {
+      "url": "https://ssodb.bplaced.net/db/data/db-de.accessories.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/accessoires.html",
+      "script": "https://ssodb.bplaced.net/db/media/js/db.accessories.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 52342,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 300
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/data/db-de.bags.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/taschen.html",
+      "script": "https://ssodb.bplaced.net/db/media/js/db.bags.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 79828,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 380
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/data/db-de.clothes.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/kleidung.html",
+      "script": "https://ssodb.bplaced.net/db/media/js/db.clothes.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 866332,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 4468
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/data/db-de.decorations.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/dekoration.html",
+      "script": "https://ssodb.bplaced.net/db/media/js/db.decorations.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 214731,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 1233
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/data/db-de.equipment.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/ausruestung.html",
+      "script": "https://ssodb.bplaced.net/db/media/js/db.equipment.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 499598,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 2438
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/data/db-de.hairstyles.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/frisuren.html",
+      "script": "https://ssodb.bplaced.net/db/media/js/db.hairstyles.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 35576,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 504
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/data/db-de.horses.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/pferde.html",
+      "script": "https://ssodb.bplaced.net/db/media/js/db.horses.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 59822,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 734
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/data/db-de.makeup.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/makeup.html",
+      "script": "https://ssodb.bplaced.net/db/media/js/db.makeup.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 5535,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 59
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/data/db-de.pets.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/haustiere.html",
+      "script": "https://ssodb.bplaced.net/db/media/js/db.pets.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 70275,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 306
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/data/db-en.accessories.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/en/accessories.html",
+      "script": "https://ssodb.bplaced.net/db/en/media/js/db-en.accessories.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 48160,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 300
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/data/db-en.bags.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/en/bags.html",
+      "script": "https://ssodb.bplaced.net/db/en/media/js/db-en.bags.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 71106,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 380
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/data/db-en.clothes.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/en/clothes.html",
+      "script": "https://ssodb.bplaced.net/db/en/media/js/db-en.clothes.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 808612,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 4468
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/data/db-en.decorations.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/en/decorations.html",
+      "script": "https://ssodb.bplaced.net/db/en/media/js/db-en.decorations.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 197724,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 1233
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/data/db-en.equipment.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/en/equipment.html",
+      "script": "https://ssodb.bplaced.net/db/en/media/js/db-en.equipment.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 459194,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 2438
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/data/db-en.hairstyles.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/en/hairstyles.html",
+      "script": "https://ssodb.bplaced.net/db/en/media/js/db-en.hairstyles.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 35456,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 504
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/data/db-en.horses.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/en/horses.html",
+      "script": "https://ssodb.bplaced.net/db/en/media/js/db-en.horses.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 59722,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 734
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/data/db-en.makeup.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/en/makeup.html",
+      "script": "https://ssodb.bplaced.net/db/en/media/js/db-en.makeup.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 5534,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 59
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/en/data/db-en.pets.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/en/pets.html",
+      "script": "https://ssodb.bplaced.net/db/en/media/js/db-en.pets.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 61473,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 306
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/data/db-fr.accessories.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/fr/accessories.html",
+      "script": "https://ssodb.bplaced.net/db/fr/media/js/db-fr.accessories.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 53755,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 300
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/data/db-fr.bags.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/fr/bags.html",
+      "script": "https://ssodb.bplaced.net/db/fr/media/js/db-fr.bags.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 77723,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 380
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/data/db-fr.clothes-combos.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/fr/clothes-combos.html",
+      "script": "https://ssodb.bplaced.net/db/fr/media/js/db-fr.clothes-combos.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 1354463,
+      "topKeys": [
+        "aaArticles",
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 926
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/data/db-fr.clothes.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/fr/clothes.html",
+      "script": "https://ssodb.bplaced.net/db/fr/media/js/db-fr.clothes.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 887332,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 4468
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/data/db-fr.decorations.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/fr/decorations.html",
+      "script": "https://ssodb.bplaced.net/db/fr/media/js/db-fr.decorations.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 213049,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 1233
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/data/db-fr.equipment-combos.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/fr/equipment-combos.html",
+      "script": "https://ssodb.bplaced.net/db/fr/media/js/db-fr.equipment-combos.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 384881,
+      "topKeys": [
+        "aaArticles",
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 755
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/data/db-fr.equipment.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/fr/equipment.html",
+      "script": "https://ssodb.bplaced.net/db/fr/media/js/db-fr.equipment.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 502967,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 2438
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/data/db-fr.hairstyles.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/fr/hairstyles.html",
+      "script": "https://ssodb.bplaced.net/db/fr/media/js/db-fr.hairstyles.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 35820,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 504
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/data/db-fr.horses.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/fr/horses.html",
+      "script": "https://ssodb.bplaced.net/db/fr/media/js/db-fr.horses.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 59855,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 734
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/data/db-fr.makeup.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/fr/makeup.html",
+      "script": "https://ssodb.bplaced.net/db/fr/media/js/db-fr.makeup.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 5586,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 59
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/fr/data/db-fr.pets.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/fr/pets.html",
+      "script": "https://ssodb.bplaced.net/db/fr/media/js/db-fr.pets.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 68492,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 306
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/data/db-pl.accessories.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/pl/accessories.html",
+      "script": "https://ssodb.bplaced.net/db/pl/media/js/db-pl.accessories.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 50894,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 300
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/data/db-pl.bags.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/pl/bags.html",
+      "script": "https://ssodb.bplaced.net/db/pl/media/js/db-pl.bags.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 78051,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 380
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/data/db-pl.clothes.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/pl/clothes.html",
+      "script": "https://ssodb.bplaced.net/db/pl/media/js/db-pl.clothes.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 868398,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 4468
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/data/db-pl.decorations.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/pl/decorations.html",
+      "script": "https://ssodb.bplaced.net/db/pl/media/js/db-pl.decorations.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 210435,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 1233
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/data/db-pl.equipment.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/pl/equipment.html",
+      "script": "https://ssodb.bplaced.net/db/pl/media/js/db-pl.equipment.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 495769,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 2438
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/data/db-pl.hairstyles.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/pl/hairstyles.html",
+      "script": "https://ssodb.bplaced.net/db/pl/media/js/db-pl.hairstyles.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 35604,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 504
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/data/db-pl.horses.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/pl/horses.html",
+      "script": "https://ssodb.bplaced.net/db/pl/media/js/db-pl.horses.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 59965,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 734
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/data/db-pl.makeup.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/pl/makeup.html",
+      "script": "https://ssodb.bplaced.net/db/pl/media/js/db-pl.makeup.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 5486,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 59
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/pl/data/db-pl.pets.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/pl/pets.html",
+      "script": "https://ssodb.bplaced.net/db/pl/media/js/db-pl.pets.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 65444,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 306
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/data/db-se.accessories.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/se/accessories.html",
+      "script": "https://ssodb.bplaced.net/db/se/media/js/db-se.accessories.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 49438,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 300
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/data/db-se.bags.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/se/bags.html",
+      "script": "https://ssodb.bplaced.net/db/se/media/js/db-se.bags.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 73193,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 380
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/data/db-se.clothes.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/se/clothes.html",
+      "script": "https://ssodb.bplaced.net/db/se/media/js/db-se.clothes.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 822947,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 4468
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/data/db-se.decorations.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/se/decorations.html",
+      "script": "https://ssodb.bplaced.net/db/se/media/js/db-se.decorations.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 197505,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 1233
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/data/db-se.equipment.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/se/equipment.html",
+      "script": "https://ssodb.bplaced.net/db/se/media/js/db-se.equipment.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 465196,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 2438
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/data/db-se.hairstyles.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/se/hairstyles.html",
+      "script": "https://ssodb.bplaced.net/db/se/media/js/db-se.hairstyles.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 35365,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 504
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/data/db-se.horses.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/se/horses.html",
+      "script": "https://ssodb.bplaced.net/db/se/media/js/db-se.horses.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 59738,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 734
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/data/db-se.makeup.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/se/makeup.html",
+      "script": "https://ssodb.bplaced.net/db/se/media/js/db-se.makeup.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 5461,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 59
+    },
+    {
+      "url": "https://ssodb.bplaced.net/db/se/data/db-se.pets.json",
+      "status": 200,
+      "referer": "https://ssodb.bplaced.net/db/se/pets.html",
+      "script": "https://ssodb.bplaced.net/db/se/media/js/db-se.pets.min.js",
+      "contentType": "application/json",
+      "isJson": true,
+      "bytes": 63605,
+      "topKeys": [
+        "aaData",
+        "aoSSO"
+      ],
+      "rowCount": 306
+    }
+  ]
+}
