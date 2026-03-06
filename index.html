@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&family=Righteous&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Public+Sans:wght@400;600;700;800&family=Righteous&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -21,84 +21,105 @@
     <div class="bg-orb bg-orb-b"></div>
 
     <main class="app-shell">
-      <header class="hero">
-        <p class="hero-kicker">Community-driven collection tracker</p>
-        <h1>StarStable Checklist</h1>
-        <p class="hero-subtitle">
-          Favorite the things you want and check off everything you already own.
-        </p>
-      </header>
-
-      <section class="controls">
-        <div class="search-wrap">
-          <label for="searchInput">Search</label>
-          <input
-            id="searchInput"
-            type="search"
-            placeholder="Type item name, type, or location..."
-            autocomplete="off"
-          />
+      <aside class="sidebar">
+        <div class="sidebar-head">
+          <p class="sidebar-kicker">Menu</p>
+          <h1>StarStable Checklist</h1>
         </div>
+        <nav id="categorySidebar" class="category-sidebar"></nav>
+      </aside>
 
-        <div class="toggle-row">
-          <label class="pill-toggle">
-            <input id="ownedOnlyToggle" type="checkbox" />
-            <span>Owned only</span>
-          </label>
-          <label class="pill-toggle">
-            <input id="favoritesOnlyToggle" type="checkbox" />
-            <span>Favorites only</span>
-          </label>
-          <label class="pill-toggle">
-            <input id="newOnlyToggle" type="checkbox" />
-            <span>New items only</span>
-          </label>
-        </div>
+      <section class="content">
+        <header class="hero">
+          <p class="hero-kicker">Fast collectible tracking</p>
+          <h2>Find it fast. Mark it done.</h2>
+          <p class="hero-subtitle">
+            Search items, filter by location/shop/type, and save your checklist automatically.
+          </p>
+        </header>
 
-        <div class="category-area">
-          <div class="category-head">
-            <span>Categories</span>
-            <button id="toggleAllCategoriesBtn" type="button">Toggle all</button>
+        <section class="controls">
+          <div class="search-wrap">
+            <label for="searchInput">Text Search</label>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Type item name, description, location..."
+              autocomplete="off"
+            />
           </div>
-          <div id="categoryChips" class="category-chips"></div>
-        </div>
 
-        <div class="actions-row">
-          <button id="exportStateBtn" type="button">Export checklist state</button>
-          <button id="importStateBtn" type="button">Import checklist state</button>
-          <button id="clearStateBtn" type="button" class="danger">Clear checks</button>
-          <input id="importFileInput" type="file" accept="application/json" hidden />
-        </div>
-      </section>
+          <div class="filter-grid">
+            <label class="field">
+              <span>Location</span>
+              <select id="locationFilter"></select>
+            </label>
+            <label class="field">
+              <span>Shop</span>
+              <select id="shopFilter"></select>
+            </label>
+            <label class="field">
+              <span>Type</span>
+              <select id="typeFilter"></select>
+            </label>
+            <div class="field field-btn">
+              <span>&nbsp;</span>
+              <button id="clearFiltersBtn" type="button">Clear filters</button>
+            </div>
+          </div>
 
-      <section class="stats">
-        <div class="stat-main">
-          <div class="stat-line">
-            <strong id="ownedCount">0</strong>
-            <span id="totalCount">/ 0 owned</span>
+          <div class="toggle-row">
+            <label class="pill-toggle">
+              <input id="ownedOnlyToggle" type="checkbox" />
+              <span>Owned only</span>
+            </label>
+            <label class="pill-toggle">
+              <input id="favoritesOnlyToggle" type="checkbox" />
+              <span>Favorites only</span>
+            </label>
+            <label class="pill-toggle">
+              <input id="newOnlyToggle" type="checkbox" />
+              <span>New items only</span>
+            </label>
           </div>
-          <div class="progress-track">
-            <div id="progressFill" class="progress-fill"></div>
-          </div>
-        </div>
-        <div class="stat-side">
-          <div>
-            <span class="label">Favorites</span>
-            <strong id="favoritesCount">0</strong>
-          </div>
-          <div>
-            <span class="label">Filtered results</span>
-            <strong id="filteredCount">0</strong>
-          </div>
-        </div>
-      </section>
 
-      <section class="results">
-        <div id="itemsGrid" class="items-grid"></div>
-        <div id="emptyState" class="empty-state" hidden>No matching items.</div>
-        <button id="loadMoreBtn" type="button" class="load-more" hidden>
-          Load more
-        </button>
+          <div class="actions-row">
+            <button id="exportStateBtn" type="button">Export checklist state</button>
+            <button id="importStateBtn" type="button">Import checklist state</button>
+            <button id="clearStateBtn" type="button" class="danger">Clear checks</button>
+            <input id="importFileInput" type="file" accept="application/json" hidden />
+          </div>
+        </section>
+
+        <section class="stats">
+          <div class="stat-main">
+            <div class="stat-line">
+              <strong id="ownedCount">0</strong>
+              <span id="totalCount">/ 0 owned</span>
+            </div>
+            <div class="progress-track">
+              <div id="progressFill" class="progress-fill"></div>
+            </div>
+          </div>
+          <div class="stat-side">
+            <div>
+              <span class="label">Favorites</span>
+              <strong id="favoritesCount">0</strong>
+            </div>
+            <div>
+              <span class="label">Filtered results</span>
+              <strong id="filteredCount">0</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="results">
+          <div id="itemsGrid" class="items-grid"></div>
+          <div id="emptyState" class="empty-state" hidden>No matching items.</div>
+          <button id="loadMoreBtn" type="button" class="load-more" hidden>
+            Load more
+          </button>
+        </section>
       </section>
     </main>
 

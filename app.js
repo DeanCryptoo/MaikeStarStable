@@ -1,14 +1,80 @@
 const DATA_URL = "data/items.json";
-const STORAGE_KEY = "starstable-checklist-state-v1";
+const STORAGE_KEY = "starstable-checklist-state-v3";
+const LEGACY_STORAGE_KEYS = ["starstable-checklist-state-v2", "starstable-checklist-state-v1"];
 const PAGE_SIZE = 220;
+
+const CATEGORY_ORDER = [
+  "clothes",
+  "equipment",
+  "decorations",
+  "accessories",
+  "hairstyles",
+  "makeup",
+  "horses",
+  "bags",
+  "pets",
+];
+
+const CATEGORY_META = {
+  clothes: {
+    label: "Clothes",
+    icon: "https://ssodb.bplaced.net/db/media/images/menu/sign-clothes.jpg",
+  },
+  equipment: {
+    label: "Equipment",
+    icon: "https://ssodb.bplaced.net/db/media/images/menu/sign-equipment.jpg",
+  },
+  decorations: {
+    label: "Decorations",
+    icon: "https://ssodb.bplaced.net/db/media/images/menu/sign-decoration.jpg",
+  },
+  accessories: {
+    label: "Accessories",
+    icon: "https://ssodb.bplaced.net/db/media/images/menu/sign-accessories.jpg",
+  },
+  hairstyles: {
+    label: "Hairstyles",
+    icon: "https://ssodb.bplaced.net/db/media/images/menu/sign-hairstyle.jpg",
+  },
+  makeup: {
+    label: "Makeup",
+    icon: "https://ssodb.bplaced.net/db/media/images/menu/sign-makeup.jpg",
+  },
+  horses: {
+    label: "Horses",
+    icon: "https://ssodb.bplaced.net/db/media/images/menu/sign-horses.jpg",
+  },
+  bags: {
+    label: "Bags",
+    icon: "https://ssodb.bplaced.net/db/media/images/menu/sign-bags.jpg",
+  },
+  pets: {
+    label: "Pets",
+    icon: "https://ssodb.bplaced.net/db/media/images/menu/sign-pets.jpg",
+  },
+};
+
+const DEFAULT_UI = {
+  searchText: "",
+  ownedOnly: false,
+  favoritesOnly: false,
+  newOnly: false,
+  activeCategory: null,
+  locationFilter: "",
+  shopFilter: "",
+  typeFilter: "",
+};
 
 const dom = {
   searchInput: document.getElementById("searchInput"),
   ownedOnlyToggle: document.getElementById("ownedOnlyToggle"),
   favoritesOnlyToggle: document.getElementById("favoritesOnlyToggle"),
   newOnlyToggle: document.getElementById("newOnlyToggle"),
-  categoryChips: document.getElementById("categoryChips"),
-  toggleAllCategoriesBtn: document.getElementById("toggleAllCategoriesBtn"),
+  locationFilter: document.getElementById("locationFilter"),
+  shopFilter: document.getElementById("shopFilter"),
+  typeFilter: document.getElementById("typeFilter"),
+  clearFiltersBtn: document.getElementById("clearFiltersBtn"),
+  categorySidebar: document.getElementById("categorySidebar"),
   exportStateBtn: document.getElementById("exportStateBtn"),
   importStateBtn: document.getElementById("importStateBtn"),
   clearStateBtn: document.getElementById("clearStateBtn"),
@@ -27,37 +93,94 @@ const dom = {
 const appState = {
   allItems: [],
   filteredItems: [],
-  selectedCategories: new Set(),
   favorites: {},
   owned: {},
+  activeCategory: null,
+  ui: { ...DEFAULT_UI },
   renderLimit: PAGE_SIZE,
 };
 
+function escapeHtml(text) {
+  return String(text)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
 function loadChecklistState() {
   try {
-    const saved = localStorage.getItem(STORAGE_KEY);
+    let saved = localStorage.getItem(STORAGE_KEY);
+    if (!saved) {
+      for (const legacy of LEGACY_STORAGE_KEYS) {
+        saved = localStorage.getItem(legacy);
+        if (saved) break;
+      }
+    }
     if (!saved) return;
+
     const data = JSON.parse(saved);
-    if (data && typeof data === "object") {
-      if (data.favorites && typeof data.favorites === "object") {
-        appState.favorites = data.favorites;
+    if (!data || typeof data !== "object") return;
+
+    if (data.favorites && typeof data.favorites === "object") {
+      appState.favorites = data.favorites;
+    }
+    if (data.owned && typeof data.owned === "object") {
+      appState.owned = data.owned;
+    }
+
+    if (data.ui && typeof data.ui === "object") {
+      const migrated = { ...DEFAULT_UI, ...data.ui };
+      if (!migrated.activeCategory && Array.isArray(migrated.selectedCategories)) {
+        migrated.activeCategory = migrated.selectedCategories.length === 1 ? migrated.selectedCategories[0] : null;
       }
-      if (data.owned && typeof data.owned === "object") {
-        appState.owned = data.owned;
-      }
+      appState.ui = migrated;
     }
   } catch (err) {
     console.warn("Failed to load saved checklist state.", err);
   }
 }
 
-function saveChecklistState() {
-  const payload = {
-    favorites: appState.favorites,
-    owned: appState.owned,
-    updatedAt: new Date().toISOString(),
+function getCurrentUiState() {
+  return {
+    searchText: dom.searchInput.value,
+    ownedOnly: dom.ownedOnlyToggle.checked,
+    favoritesOnly: dom.favoritesOnlyToggle.checked,
+    newOnly: dom.newOnlyToggle.checked,
+    activeCategory: appState.activeCategory,
+    locationFilter: dom.locationFilter.value,
+    shopFilter: dom.shopFilter.value,
+    typeFilter: dom.typeFilter.value,
   };
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+}
+
+function saveChecklistState() {
+  try {
+    const payload = {
+      favorites: appState.favorites,
+      owned: appState.owned,
+      ui: getCurrentUiState(),
+      updatedAt: new Date().toISOString(),
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+  } catch (err) {
+    console.warn("Failed to save checklist state.", err);
+  }
+}
+
+let saveTimer = null;
+function scheduleSave() {
+  if (saveTimer) {
+    clearTimeout(saveTimer);
+  }
+  saveTimer = window.setTimeout(() => {
+    saveChecklistState();
+  }, 160);
+}
+
+function categoryLabel(category) {
+  return CATEGORY_META[category]?.label || category.charAt(0).toUpperCase() + category.slice(1);
 }
 
 function isOwned(itemId) {
@@ -69,26 +192,13 @@ function isFavorite(itemId) {
 }
 
 function setOwned(itemId, value) {
-  if (value) {
-    appState.owned[itemId] = true;
-  } else {
-    delete appState.owned[itemId];
-  }
+  if (value) appState.owned[itemId] = true;
+  else delete appState.owned[itemId];
 }
 
 function setFavorite(itemId, value) {
-  if (value) {
-    appState.favorites[itemId] = true;
-  } else {
-    delete appState.favorites[itemId];
-  }
-}
-
-function prettyCategory(category) {
-  return category
-    .split("-")
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(" ");
+  if (value) appState.favorites[itemId] = true;
+  else delete appState.favorites[itemId];
 }
 
 function textMatch(item, needle) {
@@ -108,23 +218,131 @@ function textMatch(item, needle) {
   return hay.includes(needle);
 }
 
-function formatPrice(js, sc) {
-  const parts = [];
-  if (Number.isInteger(js) && js > 0) parts.push(`${js} JS`);
-  if (Number.isInteger(sc) && sc > 0) parts.push(`${sc} SC`);
-  return parts.length ? parts.join(" • ") : "No price listed";
+function getCategoryScopedItems() {
+  if (!appState.activeCategory) {
+    return appState.allItems;
+  }
+  return appState.allItems.filter((item) => item.category === appState.activeCategory);
 }
 
-function makeMetaRows(item) {
-  const rows = [
-    `Category: ${prettyCategory(item.category)}`,
-    item.type ? `Type: ${item.type}` : "",
-    item.subtype ? `Subtype: ${item.subtype}` : "",
-    item.level && item.level > 0 ? `Required level: ${item.level}` : "",
-    item.location ? `Location: ${item.location}` : "",
-    formatPrice(item.priceJs, item.priceSc),
-  ].filter(Boolean);
-  return rows;
+function getFilterContext() {
+  return {
+    needle: dom.searchInput.value.trim().toLowerCase(),
+    ownedOnly: dom.ownedOnlyToggle.checked,
+    favoritesOnly: dom.favoritesOnlyToggle.checked,
+    newOnly: dom.newOnlyToggle.checked,
+    location: dom.locationFilter.value,
+    shop: dom.shopFilter.value,
+    type: dom.typeFilter.value,
+  };
+}
+
+function matchesFilterContext(item, context, excludeField = "") {
+  if (appState.activeCategory && item.category !== appState.activeCategory) return false;
+  if (context.needle && !textMatch(item, context.needle)) return false;
+  if (context.ownedOnly && !isOwned(item.id)) return false;
+  if (context.favoritesOnly && !isFavorite(item.id)) return false;
+  if (context.newOnly && !item.isNew) return false;
+  if (excludeField !== "location" && context.location && item.location !== context.location) return false;
+  if (excludeField !== "shop" && context.shop && item.shop !== context.shop) return false;
+  if (excludeField !== "type" && context.type && item.type !== context.type) return false;
+  return true;
+}
+
+function uniqueSortedValues(items, key) {
+  const seen = new Set();
+  for (const item of items) {
+    const value = item[key];
+    if (typeof value !== "string") continue;
+    const trimmed = value.trim();
+    if (!trimmed) continue;
+    seen.add(trimmed);
+  }
+  return [...seen].sort((a, b) => a.localeCompare(b));
+}
+
+function fillSelect(select, values, selected, label) {
+  const fragment = document.createDocumentFragment();
+  const defaultOption = document.createElement("option");
+  defaultOption.value = "";
+  defaultOption.textContent = `All ${label}`;
+  fragment.appendChild(defaultOption);
+
+  for (const value of values) {
+    const option = document.createElement("option");
+    option.value = value;
+    option.textContent = value;
+    fragment.appendChild(option);
+  }
+
+  select.innerHTML = "";
+  select.appendChild(fragment);
+  if (selected && values.includes(selected)) {
+    select.value = selected;
+  } else {
+    select.value = "";
+  }
+}
+
+function refreshFilterOptions() {
+  const context = getFilterContext();
+  const sourceItems = getCategoryScopedItems();
+
+  const locationItems = sourceItems.filter((item) => matchesFilterContext(item, context, "location"));
+  const shopItems = sourceItems.filter((item) => matchesFilterContext(item, context, "shop"));
+  const typeItems = sourceItems.filter((item) => matchesFilterContext(item, context, "type"));
+
+  fillSelect(dom.locationFilter, uniqueSortedValues(locationItems, "location"), context.location, "locations");
+  fillSelect(dom.shopFilter, uniqueSortedValues(shopItems, "shop"), context.shop, "shops");
+  fillSelect(dom.typeFilter, uniqueSortedValues(typeItems, "type"), context.type, "types");
+}
+
+function makeMetaHtml(item) {
+  const rows = [];
+  rows.push(
+    `<div class="meta-row"><span class="meta-label">Category</span><span class="meta-value">${escapeHtml(
+      categoryLabel(item.category)
+    )}</span></div>`
+  );
+  if (item.type) {
+    rows.push(
+      `<div class="meta-row"><span class="meta-label">Type</span><span class="meta-value">${escapeHtml(
+        item.type
+      )}</span></div>`
+    );
+  }
+  if (item.subtype) {
+    rows.push(
+      `<div class="meta-row"><span class="meta-label">Subtype</span><span class="meta-value">${escapeHtml(
+        item.subtype
+      )}</span></div>`
+    );
+  }
+  if (Number.isInteger(item.level) && item.level > 0) {
+    rows.push(
+      `<div class="meta-row"><span class="meta-label">Required level</span><span class="meta-value">${item.level}</span></div>`
+    );
+  }
+  if (item.location) {
+    rows.push(
+      `<div class="meta-row"><span class="meta-label">Location</span><span class="meta-value">${escapeHtml(
+        item.location
+      )}</span></div>`
+    );
+  }
+
+  const priceTags = [];
+  if (Number.isInteger(item.priceJs) && item.priceJs > 0) {
+    priceTags.push(`<span class="price-tag js">${item.priceJs.toLocaleString()} JS</span>`);
+  }
+  if (Number.isInteger(item.priceSc) && item.priceSc > 0) {
+    priceTags.push(`<span class="price-tag sc"><strong>${item.priceSc.toLocaleString()} SC</strong></span>`);
+  }
+  if (!priceTags.length) {
+    priceTags.push('<span class="price-tag none">No price listed</span>');
+  }
+
+  return `<div class="price-row">${priceTags.join("")}</div>${rows.join("")}`;
 }
 
 function buildCard(item, index) {
@@ -138,14 +356,14 @@ function buildCard(item, index) {
   const ownedCheckbox = fragment.querySelector(".owned-check input");
 
   card.dataset.itemId = item.id;
-  card.style.setProperty("--stagger", String(index % 18));
+  card.style.setProperty("--stagger", String(index % 16));
 
   const owned = isOwned(item.id);
   const favorite = isFavorite(item.id);
 
   card.classList.toggle("owned", owned);
   favBtn.classList.toggle("active", favorite);
-  favBtn.textContent = favorite ? "★" : "☆";
+  favBtn.textContent = favorite ? "\u2605" : "\u2606";
   favBtn.dataset.action = "favorite";
   favBtn.dataset.itemId = item.id;
 
@@ -159,47 +377,55 @@ function buildCard(item, index) {
 
   title.textContent = item.title || "Unnamed item";
   desc.textContent = item.description || "No description";
+  meta.innerHTML = makeMetaHtml(item);
 
-  const metaRows = makeMetaRows(item);
-  meta.innerHTML = metaRows.map((line) => `<span>${line}</span>`).join("");
   return fragment;
 }
 
-function renderCategoryChips() {
-  const categories = [...new Set(appState.allItems.map((item) => item.category))];
-  const counts = categories.reduce((acc, category) => {
-    acc[category] = appState.allItems.filter((item) => item.category === category).length;
-    return acc;
-  }, {});
+function renderCategorySidebar() {
+  const counts = {};
+  for (const item of appState.allItems) {
+    counts[item.category] = (counts[item.category] || 0) + 1;
+  }
+
+  const categoryList = CATEGORY_ORDER.filter((category) => counts[category]).concat(
+    Object.keys(counts).filter((category) => !CATEGORY_ORDER.includes(category)).sort((a, b) => a.localeCompare(b))
+  );
 
   const fragment = document.createDocumentFragment();
-  for (const category of categories) {
-    const chip = document.createElement("button");
-    chip.type = "button";
-    chip.className = "chip active";
-    chip.dataset.category = category;
-    chip.textContent = `${prettyCategory(category)} (${counts[category]})`;
-    fragment.appendChild(chip);
-    appState.selectedCategories.add(category);
+
+  const allButton = document.createElement("button");
+  allButton.type = "button";
+  allButton.className = "side-category" + (appState.activeCategory ? "" : " active");
+  allButton.dataset.category = "all";
+  allButton.innerHTML =
+    '<img class="side-icon" src="https://ssodb.bplaced.net/db/media/images/menu/sign-home.jpg" alt="All" referrerpolicy="no-referrer">' +
+    '<span class="side-label">All items</span>' +
+    `<span class="side-count">${appState.allItems.length.toLocaleString()}</span>`;
+  fragment.appendChild(allButton);
+
+  for (const category of categoryList) {
+    const meta = CATEGORY_META[category] || {};
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "side-category" + (appState.activeCategory === category ? " active" : "");
+    button.dataset.category = category;
+    button.innerHTML =
+      `<img class="side-icon" src="${escapeHtml(meta.icon || "")}" alt="${escapeHtml(
+        categoryLabel(category)
+      )}" referrerpolicy="no-referrer">` +
+      `<span class="side-label">${escapeHtml(categoryLabel(category))}</span>` +
+      `<span class="side-count">${(counts[category] || 0).toLocaleString()}</span>`;
+    fragment.appendChild(button);
   }
-  dom.categoryChips.innerHTML = "";
-  dom.categoryChips.appendChild(fragment);
+
+  dom.categorySidebar.innerHTML = "";
+  dom.categorySidebar.appendChild(fragment);
 }
 
 function applyFilters() {
-  const needle = dom.searchInput.value.trim().toLowerCase();
-  const ownedOnly = dom.ownedOnlyToggle.checked;
-  const favoritesOnly = dom.favoritesOnlyToggle.checked;
-  const newOnly = dom.newOnlyToggle.checked;
-
-  appState.filteredItems = appState.allItems.filter((item) => {
-    if (!appState.selectedCategories.has(item.category)) return false;
-    if (ownedOnly && !isOwned(item.id)) return false;
-    if (favoritesOnly && !isFavorite(item.id)) return false;
-    if (newOnly && !item.isNew) return false;
-    if (!textMatch(item, needle)) return false;
-    return true;
-  });
+  const context = getFilterContext();
+  appState.filteredItems = appState.allItems.filter((item) => matchesFilterContext(item, context));
 }
 
 function updateStats() {
@@ -226,7 +452,6 @@ function renderItems() {
 
   const hasResults = appState.filteredItems.length > 0;
   const hasMore = appState.filteredItems.length > appState.renderLimit;
-
   dom.emptyState.hidden = hasResults;
   dom.loadMoreBtn.hidden = !hasMore;
 }
@@ -240,39 +465,93 @@ function refreshView(resetLimit = true) {
   renderItems();
 }
 
-function attachEventHandlers() {
-  dom.searchInput.addEventListener("input", () => refreshView(true));
-  dom.ownedOnlyToggle.addEventListener("change", () => refreshView(true));
-  dom.favoritesOnlyToggle.addEventListener("change", () => refreshView(true));
-  dom.newOnlyToggle.addEventListener("change", () => refreshView(true));
+function applyUiStateFromStorage() {
+  dom.searchInput.value = appState.ui.searchText || "";
+  dom.ownedOnlyToggle.checked = Boolean(appState.ui.ownedOnly);
+  dom.favoritesOnlyToggle.checked = Boolean(appState.ui.favoritesOnly);
+  dom.newOnlyToggle.checked = Boolean(appState.ui.newOnly);
 
-  dom.categoryChips.addEventListener("click", (event) => {
-    const target = event.target;
-    if (!(target instanceof HTMLButtonElement)) return;
-    const category = target.dataset.category;
-    if (!category) return;
-    if (appState.selectedCategories.has(category)) {
-      appState.selectedCategories.delete(category);
-      target.classList.remove("active");
-    } else {
-      appState.selectedCategories.add(category);
-      target.classList.add("active");
-    }
+  if (appState.ui.activeCategory && CATEGORY_META[appState.ui.activeCategory]) {
+    appState.activeCategory = appState.ui.activeCategory;
+  } else {
+    appState.activeCategory = null;
+  }
+
+  renderCategorySidebar();
+  refreshFilterOptions();
+
+  if (appState.ui.locationFilter) {
+    dom.locationFilter.value = [...dom.locationFilter.options].some((o) => o.value === appState.ui.locationFilter)
+      ? appState.ui.locationFilter
+      : "";
+  }
+  if (appState.ui.shopFilter) {
+    dom.shopFilter.value = [...dom.shopFilter.options].some((o) => o.value === appState.ui.shopFilter)
+      ? appState.ui.shopFilter
+      : "";
+  }
+  if (appState.ui.typeFilter) {
+    dom.typeFilter.value = [...dom.typeFilter.options].some((o) => o.value === appState.ui.typeFilter)
+      ? appState.ui.typeFilter
+      : "";
+  }
+
+  refreshFilterOptions();
+}
+
+function setActiveCategory(category) {
+  appState.activeCategory = category && category !== "all" ? category : null;
+  renderCategorySidebar();
+  refreshFilterOptions();
+}
+
+function clearAllFilters() {
+  appState.activeCategory = null;
+  dom.searchInput.value = "";
+  dom.ownedOnlyToggle.checked = false;
+  dom.favoritesOnlyToggle.checked = false;
+  dom.newOnlyToggle.checked = false;
+
+  renderCategorySidebar();
+  refreshFilterOptions();
+  dom.locationFilter.value = "";
+  dom.shopFilter.value = "";
+  dom.typeFilter.value = "";
+
+  saveChecklistState();
+  refreshView(true);
+}
+
+function attachEventHandlers() {
+  dom.searchInput.addEventListener("input", () => {
+    refreshFilterOptions();
+    scheduleSave();
     refreshView(true);
   });
 
-  dom.toggleAllCategoriesBtn.addEventListener("click", () => {
-    const chips = [...dom.categoryChips.querySelectorAll(".chip")];
-    const allSelected = chips.every((chip) => chip.classList.contains("active"));
-    appState.selectedCategories.clear();
-    for (const chip of chips) {
-      if (!allSelected) {
-        chip.classList.add("active");
-        if (chip.dataset.category) appState.selectedCategories.add(chip.dataset.category);
-      } else {
-        chip.classList.remove("active");
-      }
-    }
+  const filterChangeHandler = () => {
+    refreshFilterOptions();
+    scheduleSave();
+    refreshView(true);
+  };
+  dom.ownedOnlyToggle.addEventListener("change", filterChangeHandler);
+  dom.favoritesOnlyToggle.addEventListener("change", filterChangeHandler);
+  dom.newOnlyToggle.addEventListener("change", filterChangeHandler);
+  dom.locationFilter.addEventListener("change", filterChangeHandler);
+  dom.shopFilter.addEventListener("change", filterChangeHandler);
+  dom.typeFilter.addEventListener("change", filterChangeHandler);
+
+  dom.clearFiltersBtn.addEventListener("click", () => {
+    clearAllFilters();
+  });
+
+  dom.categorySidebar.addEventListener("click", (event) => {
+    const target = event.target;
+    const button = target instanceof HTMLElement ? target.closest(".side-category") : null;
+    if (!(button instanceof HTMLButtonElement)) return;
+    const category = button.dataset.category || "all";
+    setActiveCategory(category);
+    saveChecklistState();
     refreshView(true);
   });
 
@@ -283,8 +562,7 @@ function attachEventHandlers() {
 
     const itemId = target.dataset.itemId;
     if (!itemId) return;
-    const next = !isFavorite(itemId);
-    setFavorite(itemId, next);
+    setFavorite(itemId, !isFavorite(itemId));
     saveChecklistState();
     refreshView(false);
   });
@@ -313,6 +591,7 @@ function attachEventHandlers() {
       state: {
         favorites: appState.favorites,
         owned: appState.owned,
+        ui: getCurrentUiState(),
       },
     };
     const blob = new Blob([JSON.stringify(exportPayload, null, 2)], {
@@ -344,8 +623,13 @@ function attachEventHandlers() {
       if (importedState.owned && typeof importedState.owned === "object") {
         appState.owned = importedState.owned;
       }
+      if (importedState.ui && typeof importedState.ui === "object") {
+        appState.ui = { ...DEFAULT_UI, ...importedState.ui };
+      }
+
+      applyUiStateFromStorage();
       saveChecklistState();
-      refreshView(false);
+      refreshView(true);
       alert("Checklist state imported.");
     } catch (err) {
       alert("Invalid JSON file.");
@@ -362,6 +646,10 @@ function attachEventHandlers() {
     appState.favorites = {};
     saveChecklistState();
     refreshView(false);
+  });
+
+  window.addEventListener("beforeunload", () => {
+    saveChecklistState();
   });
 }
 
@@ -384,7 +672,9 @@ async function bootstrap() {
     throw new Error("Checklist payload did not include items.");
   }
 
-  renderCategoryChips();
+  renderCategorySidebar();
+  refreshFilterOptions();
+  applyUiStateFromStorage();
   attachEventHandlers();
   refreshView(true);
 }
