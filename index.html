@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -17,27 +17,39 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="ambient-wrap" aria-hidden="true">
+      <video
+        id="ambientVideo"
+        class="ambient-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="none"
+        poster="https://ssodb.bplaced.net/db/media/images/bg_header.webp"
+        data-note="Optional: add a local ambient loop source (e.g., assets/ambient/sso-ambient-loop.mp4)"
+      >
+      </video>
+    </div>
     <div class="bg-orb bg-orb-a"></div>
     <div class="bg-orb bg-orb-b"></div>
 
     <main class="app-shell">
-      <aside class="sidebar">
+      <button id="mobileMenuBtn" class="mobile-menu-btn" type="button" aria-controls="sideMenu" aria-expanded="false">
+        &#9776; Menu
+      </button>
+
+      <aside id="sideMenu" class="sidebar">
+        <button id="mobileMenuClose" class="mobile-menu-close" type="button" aria-label="Close menu">&#10005;</button>
         <div class="sidebar-head">
           <p class="sidebar-kicker">Menu</p>
           <h1>StarStable Checklist</h1>
         </div>
         <nav id="categorySidebar" class="category-sidebar"></nav>
       </aside>
+      <button id="menuBackdrop" class="menu-backdrop" type="button" aria-label="Close menu"></button>
 
       <section class="content">
-        <header class="hero">
-          <p class="hero-kicker">Fast collectible tracking</p>
-          <h2>Find it fast. Mark it done.</h2>
-          <p class="hero-subtitle">
-            Search items, filter by location/shop/type, and save your checklist automatically.
-          </p>
-        </header>
-
         <section class="controls">
           <div class="search-wrap">
             <label for="searchInput">Text Search</label>
@@ -67,6 +79,7 @@
               <button id="clearFiltersBtn" type="button">Clear filters</button>
             </div>
           </div>
+          <div id="activeFilters" class="active-filters" aria-live="polite"></div>
 
           <div class="toggle-row">
             <label class="pill-toggle">
@@ -115,7 +128,11 @@
 
         <section class="results">
           <div id="itemsGrid" class="items-grid"></div>
-          <div id="emptyState" class="empty-state" hidden>No matching items.</div>
+          <div id="emptyState" class="empty-state" hidden>
+            <img src="assets/ui/empty-horse.svg" alt="" aria-hidden="true" />
+            <h3>No matching items</h3>
+            <p>Try changing category or filters.</p>
+          </div>
           <button id="loadMoreBtn" type="button" class="load-more" hidden>
             Load more
           </button>
@@ -125,12 +142,14 @@
 
     <template id="itemCardTemplate">
       <article class="item-card">
-        <button type="button" class="fav-btn" title="Toggle favorite">☆</button>
+        <button type="button" class="fav-btn" title="Toggle favorite">&#9734;</button>
         <img class="item-image" alt="" loading="lazy" decoding="async" />
         <div class="item-content">
           <h2 class="item-title"></h2>
           <p class="item-desc"></p>
-          <div class="item-meta"></div>
+          <div class="item-quick"></div>
+          <button type="button" class="details-toggle">Details</button>
+          <div class="item-meta" hidden></div>
           <label class="owned-check">
             <input type="checkbox" />
             <span>Owned</span>
@@ -143,3 +162,4 @@
     <script src="app.js" defer></script>
   </body>
 </html>
+

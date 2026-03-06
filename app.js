@@ -2,6 +2,7 @@ const DATA_URL = "data/items.json";
 const STORAGE_KEY = "starstable-checklist-state-v3";
 const LEGACY_STORAGE_KEYS = ["starstable-checklist-state-v2", "starstable-checklist-state-v1"];
 const PAGE_SIZE = 220;
+const MOBILE_BREAKPOINT = 1120;
 
 const CATEGORY_ORDER = [
   "clothes",
@@ -66,6 +67,10 @@ const DEFAULT_UI = {
 };
 
 const dom = {
+  mobileMenuBtn: document.getElementById("mobileMenuBtn"),
+  mobileMenuClose: document.getElementById("mobileMenuClose"),
+  menuBackdrop: document.getElementById("menuBackdrop"),
+  sideMenu: document.getElementById("sideMenu"),
   searchInput: document.getElementById("searchInput"),
   ownedOnlyToggle: document.getElementById("ownedOnlyToggle"),
   favoritesOnlyToggle: document.getElementById("favoritesOnlyToggle"),
@@ -74,6 +79,7 @@ const dom = {
   shopFilter: document.getElementById("shopFilter"),
   typeFilter: document.getElementById("typeFilter"),
   clearFiltersBtn: document.getElementById("clearFiltersBtn"),
+  activeFilters: document.getElementById("activeFilters"),
   categorySidebar: document.getElementById("categorySidebar"),
   exportStateBtn: document.getElementById("exportStateBtn"),
   importStateBtn: document.getElementById("importStateBtn"),
@@ -170,6 +176,7 @@ function saveChecklistState() {
 }
 
 let saveTimer = null;
+let lastTapInfo = null;
 function scheduleSave() {
   if (saveTimer) {
     clearTimeout(saveTimer);
@@ -177,6 +184,32 @@ function scheduleSave() {
   saveTimer = window.setTimeout(() => {
     saveChecklistState();
   }, 160);
+}
+
+function toggleOwnedState(itemId) {
+  if (!itemId) return;
+  setOwned(itemId, !isOwned(itemId));
+  saveChecklistState();
+  refreshView(false);
+}
+
+function isInteractiveCardTarget(target) {
+  if (!(target instanceof HTMLElement)) return false;
+  return Boolean(target.closest("button, input, label, select, option, a, .details-toggle, .fav-btn, .owned-check"));
+}
+
+function isMobileMenuMode() {
+  return window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`).matches;
+}
+
+function setMobileMenu(open) {
+  const active = Boolean(open && isMobileMenuMode());
+  document.body.classList.toggle("menu-open", active);
+  dom.mobileMenuBtn.setAttribute("aria-expanded", active ? "true" : "false");
+}
+
+function closeMobileMenu() {
+  setMobileMenu(false);
 }
 
 function categoryLabel(category) {
@@ -284,6 +317,28 @@ function fillSelect(select, values, selected, label) {
   }
 }
 
+function renderLoadingSkeletons(count = 10) {
+  dom.itemsGrid.innerHTML = "";
+  const fragment = document.createDocumentFragment();
+  for (let i = 0; i < count; i += 1) {
+    const card = document.createElement("article");
+    card.className = "item-card skeleton-card";
+    card.innerHTML = [
+      '<div class="skeleton media"></div>',
+      '<div class="item-content">',
+      '  <div class="skeleton line-lg"></div>',
+      '  <div class="skeleton line-md"></div>',
+      '  <div class="skeleton chip"></div>',
+      '  <div class="skeleton line-sm"></div>',
+      "</div>",
+    ].join("");
+    fragment.appendChild(card);
+  }
+  dom.itemsGrid.appendChild(fragment);
+  dom.loadMoreBtn.hidden = true;
+  dom.emptyState.hidden = true;
+}
+
 function refreshFilterOptions() {
   const context = getFilterContext();
   const sourceItems = getCategoryScopedItems();
@@ -297,37 +352,44 @@ function refreshFilterOptions() {
   fillSelect(dom.typeFilter, uniqueSortedValues(typeItems, "type"), context.type, "types");
 }
 
-function makeMetaHtml(item) {
-  const rows = [];
-  rows.push(
+function makeCardInfo(item) {
+  const quickRows = [];
+  quickRows.push(
     `<div class="meta-row"><span class="meta-label">Category</span><span class="meta-value">${escapeHtml(
       categoryLabel(item.category)
     )}</span></div>`
   );
   if (item.type) {
-    rows.push(
+    quickRows.push(
       `<div class="meta-row"><span class="meta-label">Type</span><span class="meta-value">${escapeHtml(
         item.type
       )}</span></div>`
     );
   }
+  if (item.location) {
+    quickRows.push(
+      `<div class="meta-row"><span class="meta-label">Location</span><span class="meta-value">${escapeHtml(
+        item.location
+      )}</span></div>`
+    );
+  }
+
+  const detailRows = [];
   if (item.subtype) {
-    rows.push(
+    detailRows.push(
       `<div class="meta-row"><span class="meta-label">Subtype</span><span class="meta-value">${escapeHtml(
         item.subtype
       )}</span></div>`
     );
   }
   if (Number.isInteger(item.level) && item.level > 0) {
-    rows.push(
+    detailRows.push(
       `<div class="meta-row"><span class="meta-label">Required level</span><span class="meta-value">${item.level}</span></div>`
     );
   }
-  if (item.location) {
-    rows.push(
-      `<div class="meta-row"><span class="meta-label">Location</span><span class="meta-value">${escapeHtml(
-        item.location
-      )}</span></div>`
+  if (item.shop) {
+    detailRows.push(
+      `<div class="meta-row"><span class="meta-label">Shop</span><span class="meta-value">${escapeHtml(item.shop)}</span></div>`
     );
   }
 
@@ -342,7 +404,11 @@ function makeMetaHtml(item) {
     priceTags.push('<span class="price-tag none">No price listed</span>');
   }
 
-  return `<div class="price-row">${priceTags.join("")}</div>${rows.join("")}`;
+  return {
+    quickHtml: `<div class="price-row">${priceTags.join("")}</div>${quickRows.join("")}`,
+    detailsHtml: detailRows.join(""),
+    hasDetails: detailRows.length > 0,
+  };
 }
 
 function buildCard(item, index) {
@@ -352,6 +418,8 @@ function buildCard(item, index) {
   const img = fragment.querySelector(".item-image");
   const title = fragment.querySelector(".item-title");
   const desc = fragment.querySelector(".item-desc");
+  const quick = fragment.querySelector(".item-quick");
+  const detailsToggle = fragment.querySelector(".details-toggle");
   const meta = fragment.querySelector(".item-meta");
   const ownedCheckbox = fragment.querySelector(".owned-check input");
 
@@ -377,7 +445,17 @@ function buildCard(item, index) {
 
   title.textContent = item.title || "Unnamed item";
   desc.textContent = item.description || "No description";
-  meta.innerHTML = makeMetaHtml(item);
+
+  const cardInfo = makeCardInfo(item);
+  quick.innerHTML = cardInfo.quickHtml;
+  meta.innerHTML = cardInfo.detailsHtml;
+  meta.hidden = true;
+
+  detailsToggle.dataset.action = "toggle-details";
+  detailsToggle.setAttribute("aria-expanded", "false");
+  if (!cardInfo.hasDetails) {
+    detailsToggle.hidden = true;
+  }
 
   return fragment;
 }
@@ -442,6 +520,34 @@ function updateStats() {
   dom.progressFill.style.width = `${ownedPct}%`;
 }
 
+function updateActiveFiltersDisplay() {
+  const chips = [];
+  const context = getFilterContext();
+
+  if (appState.activeCategory) {
+    chips.push({ key: "activeCategory", label: `Category: ${categoryLabel(appState.activeCategory)}` });
+  }
+  if (context.location) chips.push({ key: "locationFilter", label: `Location: ${context.location}` });
+  if (context.shop) chips.push({ key: "shopFilter", label: `Shop: ${context.shop}` });
+  if (context.type) chips.push({ key: "typeFilter", label: `Type: ${context.type}` });
+  if (context.needle) chips.push({ key: "searchText", label: `Search: "${context.needle}"` });
+  if (context.ownedOnly) chips.push({ key: "ownedOnly", label: "Owned only" });
+  if (context.favoritesOnly) chips.push({ key: "favoritesOnly", label: "Favorites only" });
+  if (context.newOnly) chips.push({ key: "newOnly", label: "New items only" });
+
+  if (!chips.length) {
+    dom.activeFilters.innerHTML = '<span class="filter-hint">No active filters.</span>';
+    return;
+  }
+
+  dom.activeFilters.innerHTML = chips
+    .map(
+      (chip) =>
+        `<button type="button" class="filter-chip" data-clear="${escapeHtml(chip.key)}">${escapeHtml(chip.label)} <span aria-hidden="true">&times;</span></button>`
+    )
+    .join("");
+}
+
 function renderItems() {
   const visibleItems = appState.filteredItems.slice(0, appState.renderLimit);
   dom.itemsGrid.innerHTML = "";
@@ -462,6 +568,7 @@ function refreshView(resetLimit = true) {
   }
   applyFilters();
   updateStats();
+  updateActiveFiltersDisplay();
   renderItems();
 }
 
@@ -522,7 +629,60 @@ function clearAllFilters() {
   refreshView(true);
 }
 
+function clearOneFilter(key) {
+  switch (key) {
+    case "activeCategory":
+      appState.activeCategory = null;
+      renderCategorySidebar();
+      break;
+    case "locationFilter":
+      dom.locationFilter.value = "";
+      break;
+    case "shopFilter":
+      dom.shopFilter.value = "";
+      break;
+    case "typeFilter":
+      dom.typeFilter.value = "";
+      break;
+    case "searchText":
+      dom.searchInput.value = "";
+      break;
+    case "ownedOnly":
+      dom.ownedOnlyToggle.checked = false;
+      break;
+    case "favoritesOnly":
+      dom.favoritesOnlyToggle.checked = false;
+      break;
+    case "newOnly":
+      dom.newOnlyToggle.checked = false;
+      break;
+    default:
+      break;
+  }
+
+  refreshFilterOptions();
+  saveChecklistState();
+  refreshView(true);
+}
+
 function attachEventHandlers() {
+  dom.mobileMenuBtn.addEventListener("click", () => {
+    const isOpen = document.body.classList.contains("menu-open");
+    setMobileMenu(!isOpen);
+  });
+  dom.mobileMenuClose.addEventListener("click", () => closeMobileMenu());
+  dom.menuBackdrop.addEventListener("click", () => closeMobileMenu());
+  window.addEventListener("resize", () => {
+    if (!isMobileMenuMode()) {
+      closeMobileMenu();
+    }
+  });
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMobileMenu();
+    }
+  });
+
   dom.searchInput.addEventListener("input", () => {
     refreshFilterOptions();
     scheduleSave();
@@ -545,6 +705,15 @@ function attachEventHandlers() {
     clearAllFilters();
   });
 
+  dom.activeFilters.addEventListener("click", (event) => {
+    const target = event.target;
+    const button = target instanceof HTMLElement ? target.closest(".filter-chip") : null;
+    if (!(button instanceof HTMLButtonElement)) return;
+    const key = button.dataset.clear;
+    if (!key) return;
+    clearOneFilter(key);
+  });
+
   dom.categorySidebar.addEventListener("click", (event) => {
     const target = event.target;
     const button = target instanceof HTMLElement ? target.closest(".side-category") : null;
@@ -553,11 +722,26 @@ function attachEventHandlers() {
     setActiveCategory(category);
     saveChecklistState();
     refreshView(true);
+    if (isMobileMenuMode()) {
+      closeMobileMenu();
+    }
   });
 
   dom.itemsGrid.addEventListener("click", (event) => {
     const target = event.target;
     if (!(target instanceof HTMLElement)) return;
+    if (target.dataset.action === "toggle-details") {
+      const detailsButton = target;
+      const card = detailsButton.closest(".item-card");
+      if (!(card instanceof HTMLElement)) return;
+      const panel = card.querySelector(".item-meta");
+      if (!(panel instanceof HTMLElement)) return;
+      const open = detailsButton.getAttribute("aria-expanded") === "true";
+      detailsButton.setAttribute("aria-expanded", open ? "false" : "true");
+      detailsButton.textContent = open ? "Details" : "Hide details";
+      panel.hidden = open;
+      return;
+    }
     if (target.dataset.action !== "favorite") return;
 
     const itemId = target.dataset.itemId;
@@ -578,6 +762,53 @@ function attachEventHandlers() {
     saveChecklistState();
     refreshView(false);
   });
+
+  dom.itemsGrid.addEventListener("dblclick", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+    if (isInteractiveCardTarget(target)) return;
+
+    const card = target.closest(".item-card");
+    if (!(card instanceof HTMLElement)) return;
+    const itemId = card.dataset.itemId;
+    if (!itemId) return;
+    toggleOwnedState(itemId);
+  });
+
+  dom.itemsGrid.addEventListener(
+    "touchend",
+    (event) => {
+      const target = event.target;
+      if (!(target instanceof HTMLElement)) return;
+      if (isInteractiveCardTarget(target)) return;
+
+      const card = target.closest(".item-card");
+      if (!(card instanceof HTMLElement)) return;
+      const itemId = card.dataset.itemId;
+      if (!itemId) return;
+
+      const touch = event.changedTouches && event.changedTouches[0] ? event.changedTouches[0] : null;
+      const now = Date.now();
+      const x = touch ? touch.clientX : 0;
+      const y = touch ? touch.clientY : 0;
+
+      if (
+        lastTapInfo &&
+        lastTapInfo.itemId === itemId &&
+        now - lastTapInfo.time < 330 &&
+        Math.abs(lastTapInfo.x - x) < 30 &&
+        Math.abs(lastTapInfo.y - y) < 30
+      ) {
+        lastTapInfo = null;
+        event.preventDefault();
+        toggleOwnedState(itemId);
+        return;
+      }
+
+      lastTapInfo = { itemId, time: now, x, y };
+    },
+    { passive: false }
+  );
 
   dom.loadMoreBtn.addEventListener("click", () => {
     appState.renderLimit += PAGE_SIZE;
@@ -655,6 +886,7 @@ function attachEventHandlers() {
 
 async function bootstrap() {
   loadChecklistState();
+  renderLoadingSkeletons();
 
   let payload = null;
   if (globalThis.STARSTABLE_ITEMS && typeof globalThis.STARSTABLE_ITEMS === "object") {
@@ -685,9 +917,9 @@ bootstrap().catch((error) => {
   dom.loadMoreBtn.hidden = true;
   dom.emptyState.hidden = false;
   if (location.protocol === "file:") {
-    dom.emptyState.textContent =
-      "Could not load checklist data. Use index.html with data/items.js in the same folder, or run a local server.";
+    dom.emptyState.innerHTML =
+      "<h3>Data failed to load</h3><p>Use index.html with data/items.js in the same folder, or run a local server.</p>";
   } else {
-    dom.emptyState.textContent = "Could not load checklist data.";
+    dom.emptyState.innerHTML = "<h3>Data failed to load</h3><p>Could not load checklist data.</p>";
   }
 });
