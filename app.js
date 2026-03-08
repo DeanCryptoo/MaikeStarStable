@@ -1,8 +1,16 @@
+const DEFAULT_LANGUAGE = "en";
 const DATA_URL = "data/items.json";
 const STORAGE_KEY = "starstable-checklist-state-v3";
 const LEGACY_STORAGE_KEYS = ["starstable-checklist-state-v2", "starstable-checklist-state-v1"];
 const PAGE_SIZE = 220;
 const MOBILE_BREAKPOINT = 1120;
+const LANGUAGE_META = {
+  de: "Deutsch",
+  en: "English",
+  fr: "Français",
+  pl: "Polski",
+  se: "Svenska",
+};
 
 const CATEGORY_ORDER = [
   "clothes",
@@ -56,6 +64,7 @@ const CATEGORY_META = {
 };
 
 const DEFAULT_UI = {
+  language: DEFAULT_LANGUAGE,
   searchText: "",
   ownedOnly: false,
   favoritesOnly: false,
@@ -71,6 +80,7 @@ const dom = {
   mobileMenuClose: document.getElementById("mobileMenuClose"),
   menuBackdrop: document.getElementById("menuBackdrop"),
   sideMenu: document.getElementById("sideMenu"),
+  languageSelect: document.getElementById("languageSelect"),
   searchInput: document.getElementById("searchInput"),
   ownedOnlyToggle: document.getElementById("ownedOnlyToggle"),
   favoritesOnlyToggle: document.getElementById("favoritesOnlyToggle"),
@@ -101,9 +111,12 @@ const appState = {
   filteredItems: [],
   favorites: {},
   owned: {},
+  language: DEFAULT_LANGUAGE,
   activeCategory: null,
   ui: { ...DEFAULT_UI },
   renderLimit: PAGE_SIZE,
+  datasets: {},
+  datasetLoads: {},
 };
 
 function escapeHtml(text) {
@@ -113,6 +126,87 @@ function escapeHtml(text) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
+}
+
+function normalizeLanguage(language) {
+  return Object.hasOwn(LANGUAGE_META, language) ? language : DEFAULT_LANGUAGE;
+}
+
+function getLanguageJsonUrl(language) {
+  return language === DEFAULT_LANGUAGE ? DATA_URL : `data/items-${language}.json`;
+}
+
+function getLanguageScriptUrl(language) {
+  return `data/items-${language}.js`;
+}
+
+function getLoadedLanguageDataset(language) {
+  if (language === DEFAULT_LANGUAGE && globalThis.STARSTABLE_ITEMS && typeof globalThis.STARSTABLE_ITEMS === "object") {
+    return globalThis.STARSTABLE_ITEMS;
+  }
+  if (globalThis.STARSTABLE_ITEMS_BY_LANG && typeof globalThis.STARSTABLE_ITEMS_BY_LANG === "object") {
+    return globalThis.STARSTABLE_ITEMS_BY_LANG[language] || null;
+  }
+  return null;
+}
+
+function loadLanguageScript(language) {
+  const src = getLanguageScriptUrl(language);
+  if (appState.datasetLoads[language]) {
+    return appState.datasetLoads[language];
+  }
+
+  appState.datasetLoads[language] = new Promise((resolve, reject) => {
+    const existing = document.querySelector(`script[data-lang-dataset="${language}"]`);
+    if (existing) {
+      existing.addEventListener("load", resolve, { once: true });
+      existing.addEventListener("error", () => reject(new Error(`Failed to load ${src}`)), { once: true });
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = src;
+    script.defer = true;
+    script.dataset.langDataset = language;
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error(`Failed to load ${src}`));
+    document.body.appendChild(script);
+  });
+
+  return appState.datasetLoads[language];
+}
+
+async function loadDatasetForLanguage(language) {
+  const normalizedLanguage = normalizeLanguage(language);
+  if (appState.datasets[normalizedLanguage]) {
+    return appState.datasets[normalizedLanguage];
+  }
+
+  const preloaded = getLoadedLanguageDataset(normalizedLanguage);
+  if (preloaded) {
+    appState.datasets[normalizedLanguage] = preloaded;
+    return preloaded;
+  }
+
+  try {
+    const response = await fetch(getLanguageJsonUrl(normalizedLanguage), { cache: "no-store" });
+    if (response.ok) {
+      const payload = await response.json();
+      appState.datasets[normalizedLanguage] = payload;
+      return payload;
+    }
+  } catch (error) {
+    // `file://` fetch fails; fall through to script loading.
+  }
+
+  await loadLanguageScript(normalizedLanguage);
+  const scriptedPayload = getLoadedLanguageDataset(normalizedLanguage);
+  if (scriptedPayload) {
+    appState.datasets[normalizedLanguage] = scriptedPayload;
+    return scriptedPayload;
+  }
+
+  throw new Error(`Checklist payload did not load for language "${normalizedLanguage}".`);
 }
 
 function loadChecklistState() {
@@ -138,6 +232,7 @@ function loadChecklistState() {
 
     if (data.ui && typeof data.ui === "object") {
       const migrated = { ...DEFAULT_UI, ...data.ui };
+      migrated.language = normalizeLanguage(migrated.language);
       if (!migrated.activeCategory && Array.isArray(migrated.selectedCategories)) {
         migrated.activeCategory = migrated.selectedCategories.length === 1 ? migrated.selectedCategories[0] : null;
       }
@@ -150,6 +245,7 @@ function loadChecklistState() {
 
 function getCurrentUiState() {
   return {
+    language: normalizeLanguage(dom.languageSelect.value || appState.language),
     searchText: dom.searchInput.value,
     ownedOnly: dom.ownedOnlyToggle.checked,
     favoritesOnly: dom.favoritesOnlyToggle.checked,
@@ -214,6 +310,31 @@ function closeMobileMenu() {
 
 function categoryLabel(category) {
   return CATEGORY_META[category]?.label || category.charAt(0).toUpperCase() + category.slice(1);
+}
+
+function initLanguageSelect() {
+  const fragment = document.createDocumentFragment();
+  for (const [code, label] of Object.entries(LANGUAGE_META)) {
+    const option = document.createElement("option");
+    option.value = code;
+    option.textContent = label;
+    fragment.appendChild(option);
+  }
+  dom.languageSelect.innerHTML = "";
+  dom.languageSelect.appendChild(fragment);
+  dom.languageSelect.value = normalizeLanguage(appState.ui.language || DEFAULT_LANGUAGE);
+}
+
+async function hydrateLanguage(language) {
+  const normalizedLanguage = normalizeLanguage(language);
+  const payload = await loadDatasetForLanguage(normalizedLanguage);
+  appState.language = normalizedLanguage;
+  appState.allItems = Array.isArray(payload.items) ? payload.items : [];
+  document.documentElement.lang = normalizedLanguage;
+  dom.languageSelect.value = normalizedLanguage;
+  if (!appState.allItems.length) {
+    throw new Error(`Checklist payload did not include items for "${normalizedLanguage}".`);
+  }
 }
 
 function isOwned(itemId) {
@@ -573,6 +694,7 @@ function refreshView(resetLimit = true) {
 }
 
 function applyUiStateFromStorage() {
+  dom.languageSelect.value = normalizeLanguage(appState.ui.language || appState.language);
   dom.searchInput.value = appState.ui.searchText || "";
   dom.ownedOnlyToggle.checked = Boolean(appState.ui.ownedOnly);
   dom.favoritesOnlyToggle.checked = Boolean(appState.ui.favoritesOnly);
@@ -666,6 +788,25 @@ function clearOneFilter(key) {
 }
 
 function attachEventHandlers() {
+  dom.languageSelect.addEventListener("change", async () => {
+    const previousLanguage = appState.language;
+    appState.ui = { ...DEFAULT_UI, ...getCurrentUiState(), language: normalizeLanguage(dom.languageSelect.value) };
+    try {
+      await hydrateLanguage(appState.ui.language);
+      applyUiStateFromStorage();
+      saveChecklistState();
+      refreshView(true);
+    } catch (error) {
+      console.error(error);
+      appState.ui.language = previousLanguage;
+      dom.languageSelect.value = previousLanguage;
+      await hydrateLanguage(previousLanguage);
+      applyUiStateFromStorage();
+      refreshView(true);
+      alert("Could not load that language dataset.");
+    }
+  });
+
   dom.mobileMenuBtn.addEventListener("click", () => {
     const isOpen = document.body.classList.contains("menu-open");
     setMobileMenu(!isOpen);
@@ -856,8 +997,10 @@ function attachEventHandlers() {
       }
       if (importedState.ui && typeof importedState.ui === "object") {
         appState.ui = { ...DEFAULT_UI, ...importedState.ui };
+        appState.ui.language = normalizeLanguage(appState.ui.language);
       }
 
+      await hydrateLanguage(appState.ui.language || appState.language || DEFAULT_LANGUAGE);
       applyUiStateFromStorage();
       saveChecklistState();
       refreshView(true);
@@ -887,25 +1030,8 @@ function attachEventHandlers() {
 async function bootstrap() {
   loadChecklistState();
   renderLoadingSkeletons();
-
-  let payload = null;
-  if (globalThis.STARSTABLE_ITEMS && typeof globalThis.STARSTABLE_ITEMS === "object") {
-    payload = globalThis.STARSTABLE_ITEMS;
-  } else {
-    const response = await fetch(DATA_URL, { cache: "no-store" });
-    if (!response.ok) {
-      throw new Error(`Failed to load ${DATA_URL} (${response.status})`);
-    }
-    payload = await response.json();
-  }
-
-  appState.allItems = Array.isArray(payload.items) ? payload.items : [];
-  if (!appState.allItems.length) {
-    throw new Error("Checklist payload did not include items.");
-  }
-
-  renderCategorySidebar();
-  refreshFilterOptions();
+  initLanguageSelect();
+  await hydrateLanguage(appState.ui.language || DEFAULT_LANGUAGE);
   applyUiStateFromStorage();
   attachEventHandlers();
   refreshView(true);

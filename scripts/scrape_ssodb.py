@@ -19,6 +19,8 @@ BASE_URL = "https://ssodb.bplaced.net/db/index.html"
 BASE_HOST = "ssodb.bplaced.net"
 BASE_PATH_PREFIX = "/db/"
 OUTPUT_DIR = Path("data")
+DEFAULT_LANGUAGE = "en"
+SUPPORTED_LANGUAGES = ("de", "en", "fr", "pl", "se")
 
 ITEM_CATEGORIES = [
     "accessories",
@@ -417,10 +419,14 @@ def normalize_category_rows(category: str, payload: dict[str, Any]) -> list[dict
     return items
 
 
-def build_items_dataset(fetched_json: dict[str, Any]) -> dict[str, Any]:
+def build_items_dataset(fetched_json: dict[str, Any], language: str) -> dict[str, Any]:
     category_payloads: dict[str, dict[str, Any]] = {}
     for endpoint_url, payload in fetched_json.items():
-        m = re.search(r"/db/en/data/db-en\.([a-z0-9-]+)\.json$", endpoint_url)
+        if language == "de":
+            pattern = r"/db/data/db-de\.([a-z0-9-]+)\.json$"
+        else:
+            pattern = rf"/db/{re.escape(language)}/data/db-{re.escape(language)}\.([a-z0-9-]+)\.json$"
+        m = re.search(pattern, endpoint_url)
         if not m:
             continue
         category = m.group(1)
@@ -446,7 +452,7 @@ def build_items_dataset(fetched_json: dict[str, Any]) -> dict[str, Any]:
     return {
         "generatedAt": dt.datetime.now(dt.UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "sourceSite": "https://ssodb.bplaced.net/db/index.html",
-        "language": "en",
+        "language": language,
         "itemCount": len(all_items),
         "countsByCategory": counts,
         "items": all_items,
@@ -459,7 +465,9 @@ def main() -> None:
     with requests.Session() as session:
         pages, script_to_pages = crawl_pages(session)
         endpoints, fetched_json = fetch_data_endpoints(session, script_to_pages)
-        items_dataset = build_items_dataset(fetched_json)
+        items_datasets = {
+            language: build_items_dataset(fetched_json, language) for language in SUPPORTED_LANGUAGES
+        }
 
     scrape_manifest = {
         "generatedAt": dt.datetime.now(dt.UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
@@ -480,6 +488,7 @@ def main() -> None:
         "dataEndpointCount": len(endpoints),
         "dataEndpoints": endpoints,
     }
+    items_dataset = items_datasets[DEFAULT_LANGUAGE]
 
     (OUTPUT_DIR / "scrape_manifest.json").write_text(
         json.dumps(scrape_manifest, ensure_ascii=False, indent=2),
@@ -495,11 +504,23 @@ def main() -> None:
         + ";\n",
         encoding="utf-8",
     )
+    for language, dataset in items_datasets.items():
+        (OUTPUT_DIR / f"items-{language}.json").write_text(
+            json.dumps(dataset, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+        (OUTPUT_DIR / f"items-{language}.js").write_text(
+            "globalThis.STARSTABLE_ITEMS_BY_LANG = Object.assign(globalThis.STARSTABLE_ITEMS_BY_LANG || {}, "
+            + json.dumps({language: dataset}, ensure_ascii=False)
+            + ");\n",
+            encoding="utf-8",
+        )
 
     json_success = sum(1 for endpoint in endpoints if endpoint["isJson"])
     print(f"Pages crawled: {len(pages)}")
     print(f"Data endpoints checked: {len(endpoints)} (JSON ok: {json_success})")
-    print(f"Checklist items written: {items_dataset['itemCount']}")
+    for language, dataset in items_datasets.items():
+        print(f"Checklist items written ({language}): {dataset['itemCount']}")
     print(f"Output: {(OUTPUT_DIR / 'items.json').resolve()}")
 
 
